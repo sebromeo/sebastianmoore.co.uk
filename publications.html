@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Writing &amp; Press | Sebastian Moore</title>
-  <meta name="description" content="Articles, features and press coverage of Sebastian Moore: Business Relationship Manager at HM Treasury, AI 100 UK member and GOVBRM newsletter author.">
+  <meta name="description" content="Writing and press coverage of Sebastian Moore: GOV×BRM newsletter, publications with the BRM Institute and Apolitical, and features by Northumbria University and TechUP.">
   <link rel="canonical" href="https://sebastianmoore.co.uk/publications.html">
   <meta name="author" content="Sebastian Moore">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Writing &amp; Press | Sebastian Moore">
-  <meta property="og:description" content="Articles, features and press coverage of Sebastian Moore, Business Relationship Manager at HM Treasury and AI 100 UK member.">
+  <meta property="og:description" content="GOV×BRM newsletter, publications with the BRM Institute and Apolitical, and press features of Sebastian Moore, Business Relationship Manager at HM Treasury.">
   <meta property="og:url" content="https://sebastianmoore.co.uk/publications.html">
   <meta property="og:image" content="https://sebastianmoore.co.uk/assets/sebastian-moore.jpg">
   <meta property="og:locale" content="en_GB">
@@ -32,6 +32,31 @@
     "url": "https://sebastianmoore.co.uk/publications.html",
     "about": { "@id": "https://sebastianmoore.co.uk/#sebastian-moore" },
     "hasPart": [
+      {
+        "@type": "Periodical",
+        "name": "GOV×BRM",
+        "description": "A biweekly newsletter on government business relationship management: insights on relationships, strategy and outcomes, read by over 700 practitioners across UK government and internationally.",
+        "author": { "@id": "https://sebastianmoore.co.uk/#sebastian-moore" }
+      },
+      {
+        "@type": "Article",
+        "headline": "HM Treasury's Innovation Day 2025: Highlights",
+        "datePublished": "2025-11-18",
+        "author": { "@id": "https://sebastianmoore.co.uk/#sebastian-moore" },
+        "publisher": { "@type": "Organization", "name": "Apolitical" }
+      },
+      {
+        "@type": "Article",
+        "headline": "Versatile by Design: BRM in UK Government",
+        "datePublished": "2025-08-06",
+        "author": { "@id": "https://sebastianmoore.co.uk/#sebastian-moore" },
+        "publisher": { "@type": "Organization", "name": "Business Relationship Management Institute" }
+      },
+      {
+        "@type": "Article",
+        "headline": "From Care to Career: Social Mobility in the UK Civil Service",
+        "author": { "@id": "https://sebastianmoore.co.uk/#sebastian-moore" }
+      },
       {
         "@type": "Article",
         "headline": "The Systems We Live In and the Systems We Build: AI Journey of a TechUP Learner",
@@ -61,6 +86,17 @@
       --rule: #d9d5cc;
       --oxblood: #6d1f2c;
     }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --paper: #171614;
+        --paper-deep: #1f1d1a;
+        --ink: #ece9e2;
+        --ink-soft: #b8b4aa;
+        --ink-faint: #8a867c;
+        --rule: #33302b;
+        --oxblood: #c4677a;
+      }
+    }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: "Newsreader", Georgia, "Times New Roman", serif;
@@ -73,10 +109,11 @@
     }
     ::selection { background: var(--oxblood); color: var(--paper); }
 
-    .wrap { max-width: 680px; margin: 0 auto; padding: 0 28px; }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 0 28px; }
 
     a { color: inherit; text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; transition: text-decoration-color 0.15s ease; }
     a:hover { text-decoration-color: var(--oxblood); }
+    a:focus-visible { outline: 2px solid var(--oxblood); outline-offset: 3px; border-radius: 1px; }
 
     .label {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
@@ -87,15 +124,19 @@
       color: var(--ink-faint);
     }
 
-    header.site { padding: 30px 0 0; }
-    header.site .wrap { display: flex; justify-content: space-between; align-items: baseline; }
-    .brand {
-      font-style: italic; font-weight: 500; font-size: 1.05rem;
-      text-decoration: none; letter-spacing: 0.01em;
+    header.site {
+      position: sticky; top: 0; z-index: 50;
+      background: color-mix(in srgb, var(--paper) 88%, transparent);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--rule);
+      padding: 16px 0;
     }
+    header.site .wrap { display: flex; justify-content: space-between; align-items: baseline; max-width: 980px; }
+    .brand { font-style: italic; font-weight: 500; font-size: 1.05rem; text-decoration: none; }
     nav.site-nav a {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+      font-size: 0.78rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
       text-decoration: none; margin-left: 22px; color: var(--ink-soft);
     }
     nav.site-nav a:hover { color: var(--oxblood); }
@@ -106,11 +147,11 @@
       font-weight: 500; line-height: 1.1; letter-spacing: -0.015em;
       margin: 14px 0 20px;
     }
-    .page-head p { font-size: 1.15rem; color: var(--ink-soft); max-width: 540px; }
+    .page-head p { font-size: 1.15rem; color: var(--ink-soft); max-width: 560px; }
 
     section { border-top: 1px solid var(--rule); padding: 56px 0; }
-    .section-grid { display: grid; grid-template-columns: 150px 1fr; gap: 32px; }
-    @media (max-width: 620px) { .section-grid { grid-template-columns: 1fr; gap: 16px; } }
+    .section-grid { display: grid; grid-template-columns: 160px 1fr; gap: 36px; }
+    @media (max-width: 640px) { .section-grid { grid-template-columns: 1fr; gap: 16px; } }
     .section-grid > .label { padding-top: 7px; }
 
     .feature { margin-bottom: 30px; }
@@ -125,9 +166,10 @@
     }
     .feature p { color: var(--ink-soft); font-size: 1rem; }
 
-    .note { color: var(--ink-soft); font-style: italic; }
+    .note { color: var(--ink-soft); }
+    .note em { font-style: italic; }
 
-    footer { border-top: 1px solid var(--rule); background: var(--paper-deep); padding: 36px 0 48px; }
+    footer { border-top: 1px solid var(--rule); background: var(--paper-deep); padding: 40px 0 52px; }
     footer p {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
       font-size: 0.8rem; color: var(--ink-faint); line-height: 1.7;
@@ -143,8 +185,9 @@
   <div class="wrap">
     <a class="brand" href="/">Sebastian Moore</a>
     <nav class="site-nav">
+      <a href="/#about">About</a>
+      <a href="/#experience">Experience</a>
       <a href="/publications.html">Writing</a>
-      <a href="/#recognition">Recognition</a>
       <a href="/#contact">Contact</a>
     </nav>
   </div>
@@ -156,28 +199,47 @@
     <div class="wrap">
       <p class="label">Sebastian Moore</p>
       <h1>Writing &amp; Press</h1>
-      <p>Essays and articles by me, and coverage of my work in AI, business relationship management and the civil service.</p>
+      <p>Essays, articles and the GOV&times;BRM newsletter, plus coverage of my work in AI, business relationship management and the civil service.</p>
     </div>
   </div>
+
+  <section id="govbrm">
+    <div class="wrap section-grid">
+      <p class="label">GOV&times;BRM</p>
+      <div>
+        <article class="feature">
+          <p class="where">Biweekly newsletter &middot; 700+ subscribers</p>
+          <h3><a href="https://www.linkedin.com/in/sebx">GOV&times;BRM: Government Business Relationship Management</a></h3>
+          <p class="note">Insights on relationships, strategy and outcomes in government technology. Read by practitioners across UK government and internationally. Published biweekly on LinkedIn; a full archive is moving to its own home shortly.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
   <section id="writing">
     <div class="wrap section-grid">
       <p class="label">Writing</p>
       <div>
         <article class="feature">
-          <p class="where">TechUP · 2 July 2026</p>
+          <p class="where">TechUP &middot; 2 July 2026</p>
           <h3><a href="https://www.techup.ac.uk/the-systems-we-live-in-and-the-systems-we-build-ai-journey-of-a-techup-learner-by-sebastian-moore/">The Systems We Live In and the Systems We Build: AI Journey of a TechUP Learner</a></h3>
           <p>On moving from the care system to AI governance work, why rigorous understanding matters more than credentials, and a capstone workshop on ethical AI in the public sector.</p>
         </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="govbrm">
-    <div class="wrap section-grid">
-      <p class="label">GOVBRM</p>
-      <div>
-        <p class="note">GOVBRM is my newsletter on business relationship management in government: practical frameworks, case studies and lessons from the front line of public sector technology change. The full archive is moving to its own home shortly; in the meantime, new issues are announced on <a href="https://www.linkedin.com/in/sebx">LinkedIn</a>.</p>
+        <article class="feature">
+          <p class="where">Apolitical &middot; 18 November 2025</p>
+          <h3>HM Treasury's Innovation Day 2025: Highlights</h3>
+          <p>What happened when the Treasury opened its doors to cross-government and industry innovation, and what other departments can take from it.</p>
+        </article>
+        <article class="feature">
+          <p class="where">BRM Institute &middot; 6 August 2025</p>
+          <h3>Versatile by Design: BRM in UK Government</h3>
+          <p>On why business relationship management is the connective tissue of government digital delivery.</p>
+        </article>
+        <article class="feature">
+          <p class="where">Essay</p>
+          <h3>From Care to Career: Social Mobility in the UK Civil Service</h3>
+          <p>On the Care Leaver Internship Scheme, and what genuine social mobility looks like inside the public service.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -187,17 +249,18 @@
       <p class="label">Press &amp; features</p>
       <div>
         <article class="feature">
-          <p class="where">Northumbria University · 2026</p>
+          <p class="where">Northumbria University &middot; 2026</p>
           <h3><a href="https://www.northumbria.ac.uk/about-us/news-events/news/seb-moore-2026/">From care leaver to government AI leader: Northumbria graduate's extraordinary journey</a></h3>
         </article>
         <article class="feature">
-          <p class="where">BRM Institute · 2026</p>
+          <p class="where">BRM Institute &middot; 2026</p>
           <h3><a href="https://brm.institute/2026-top-brms/">Top BRMs 2026</a></h3>
         </article>
         <article class="feature">
-          <p class="where">Civil Service LGBT+ Network · March 2025</p>
+          <p class="where">Civil Service LGBT+ Network &middot; March 2025</p>
           <h3><a href="https://www.civilservice.lgbt/news/2025/03/25/the-northern-echo-businessiq-award-finalist/">The Northern Echo BUSINESSiQ Award Finalist</a></h3>
         </article>
+        <p class="note" style="margin-top:6px">Also featured by Apolitical, Digital Leaders, ThinkDigital, ChronicleLive and Government Transformation Magazine.</p>
       </div>
     </div>
   </section>
@@ -209,6 +272,8 @@
     <p class="foot-links">
       <a href="https://www.linkedin.com/in/sebx">LinkedIn</a>
       <a href="https://x.com/sebxmoore">X</a>
+      <a href="https://www.instagram.com/sebxmoore/">Instagram</a>
+      <a href="https://www.tiktok.com/@sebxmoore">TikTok</a>
       <a href="/">Home</a>
     </p>
     <p>&copy; 2026 Sebastian Moore. This is a personal website; all views are my own and do not represent HM Treasury or HM Government.</p>
