@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Publications &amp; Press | Sebastian Moore</title>
+  <title>Writing &amp; Press | Sebastian Moore</title>
   <meta name="description" content="Articles, features and press coverage of Sebastian Moore: Business Relationship Manager at HM Treasury, AI 100 UK member and GOVBRM newsletter author.">
   <link rel="canonical" href="https://sebastianmoore.co.uk/publications.html">
   <meta name="author" content="Sebastian Moore">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Publications &amp; Press | Sebastian Moore">
+  <meta property="og:title" content="Writing &amp; Press | Sebastian Moore">
   <meta property="og:description" content="Articles, features and press coverage of Sebastian Moore, Business Relationship Manager at HM Treasury and AI 100 UK member.">
   <meta property="og:url" content="https://sebastianmoore.co.uk/publications.html">
   <meta property="og:image" content="https://sebastianmoore.co.uk/assets/sebastian-moore.jpg">
@@ -18,13 +18,17 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@sebxmoore">
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230b2545'/%3E%3Ctext x='50' y='68' font-size='52' font-family='Georgia,serif' fill='%23ffffff' text-anchor='middle'%3ESM%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a1a18'/%3E%3Ctext x='50' y='69' font-size='46' font-family='Georgia,serif' fill='%23f4f1ec' text-anchor='middle' font-style='italic'%3ESM%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..600&display=swap" rel="stylesheet">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "Publications and Press by Sebastian Moore",
+    "name": "Writing and Press by Sebastian Moore",
     "url": "https://sebastianmoore.co.uk/publications.html",
     "about": { "@id": "https://sebastianmoore.co.uk/#sebastian-moore" },
     "hasPart": [
@@ -49,53 +53,88 @@
 
   <style>
     :root {
-      --navy: #0b2545;
-      --navy-soft: #13315c;
-      --ink: #1f2933;
-      --muted: #52606d;
-      --line: #e4e7eb;
-      --bg: #ffffff;
-      --bg-alt: #f5f7fa;
-      --accent: #8b1e3f;
+      --paper: #f7f5f1;
+      --paper-deep: #efece5;
+      --ink: #1a1a18;
+      --ink-soft: #44423d;
+      --ink-faint: #77746c;
+      --rule: #d9d5cc;
+      --oxblood: #6d1f2c;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: "Newsreader", Georgia, "Times New Roman", serif;
+      background: var(--paper);
       color: var(--ink);
-      background: var(--bg);
-      line-height: 1.65;
-      font-size: 17px;
+      font-size: 19px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
-    a { color: var(--navy-soft); }
-    a:hover { color: var(--accent); }
-    .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+    ::selection { background: var(--oxblood); color: var(--paper); }
 
-    header.site { padding: 20px 0; border-bottom: 1px solid var(--line); }
-    header.site .wrap { display: flex; justify-content: space-between; align-items: center; }
-    .brand { font-weight: 700; color: var(--navy); text-decoration: none; font-size: 1.05rem; }
-    nav a { margin-left: 20px; text-decoration: none; font-size: 0.95rem; }
+    .wrap { max-width: 680px; margin: 0 auto; padding: 0 28px; }
 
-    .page-head { padding: 48px 0 8px; }
-    h1 { font-size: 2rem; line-height: 1.2; color: var(--navy); margin-bottom: 12px; }
-    .page-head p { color: var(--muted); max-width: 620px; }
+    a { color: inherit; text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; transition: text-decoration-color 0.15s ease; }
+    a:hover { text-decoration-color: var(--oxblood); }
 
-    section { padding: 32px 0; }
-    section + section { border-top: 1px solid var(--line); }
-    h2 { font-size: 1.3rem; color: var(--navy); margin-bottom: 14px; }
-
-    .pub-list { list-style: none; }
-    .pub-list li { padding: 14px 0; border-bottom: 1px solid var(--line); }
-    .pub-list li:last-child { border-bottom: none; }
-    .pub-list a { font-weight: 600; text-decoration: none; }
-    .pub-list a:hover { text-decoration: underline; }
-    .pub-list .meta { display: block; font-size: 0.85rem; color: var(--muted); margin-top: 2px; }
-    .pub-list .desc { display: block; font-size: 0.95rem; margin-top: 6px; }
-
-    footer {
-      padding: 32px 0 48px; border-top: 1px solid var(--line);
-      font-size: 0.85rem; color: var(--muted);
+    .label {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
     }
-    footer .disclaimer { margin-top: 8px; }
+
+    header.site { padding: 30px 0 0; }
+    header.site .wrap { display: flex; justify-content: space-between; align-items: baseline; }
+    .brand {
+      font-style: italic; font-weight: 500; font-size: 1.05rem;
+      text-decoration: none; letter-spacing: 0.01em;
+    }
+    nav.site-nav a {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+      text-decoration: none; margin-left: 22px; color: var(--ink-soft);
+    }
+    nav.site-nav a:hover { color: var(--oxblood); }
+
+    .page-head { padding: 80px 0 56px; }
+    .page-head h1 {
+      font-size: clamp(2.2rem, 6vw, 3.2rem);
+      font-weight: 500; line-height: 1.1; letter-spacing: -0.015em;
+      margin: 14px 0 20px;
+    }
+    .page-head p { font-size: 1.15rem; color: var(--ink-soft); max-width: 540px; }
+
+    section { border-top: 1px solid var(--rule); padding: 56px 0; }
+    .section-grid { display: grid; grid-template-columns: 150px 1fr; gap: 32px; }
+    @media (max-width: 620px) { .section-grid { grid-template-columns: 1fr; gap: 16px; } }
+    .section-grid > .label { padding-top: 7px; }
+
+    .feature { margin-bottom: 30px; }
+    .feature:last-child { margin-bottom: 0; }
+    .feature h3 { font-size: 1.25rem; font-weight: 500; line-height: 1.3; margin-bottom: 6px; }
+    .feature h3 a { text-decoration-color: transparent; }
+    .feature h3 a:hover { text-decoration-color: var(--oxblood); }
+    .feature .where {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint);
+      margin-bottom: 8px;
+    }
+    .feature p { color: var(--ink-soft); font-size: 1rem; }
+
+    .note { color: var(--ink-soft); font-style: italic; }
+
+    footer { border-top: 1px solid var(--rule); background: var(--paper-deep); padding: 36px 0 48px; }
+    footer p {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 0.8rem; color: var(--ink-faint); line-height: 1.7;
+    }
+    footer .foot-links { margin-bottom: 14px; }
+    footer .foot-links a { text-decoration: none; color: var(--ink-soft); margin-right: 18px; }
+    footer .foot-links a:hover { color: var(--oxblood); }
   </style>
 </head>
 <body>
@@ -103,67 +142,76 @@
 <header class="site">
   <div class="wrap">
     <a class="brand" href="/">Sebastian Moore</a>
-    <nav>
-      <a href="/publications.html">Publications &amp; Press</a>
-      <a href="https://www.linkedin.com/in/sebx">LinkedIn</a>
-      <a href="https://x.com/sebxmoore">X</a>
+    <nav class="site-nav">
+      <a href="/publications.html">Writing</a>
+      <a href="/#recognition">Recognition</a>
+      <a href="/#contact">Contact</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <div class="wrap">
 
-    <div class="page-head">
-      <h1>Publications &amp; Press</h1>
-      <p>Writing by me, and coverage of my work in AI, business relationship management and the civil service.</p>
+  <div class="page-head">
+    <div class="wrap">
+      <p class="label">Sebastian Moore</p>
+      <h1>Writing &amp; Press</h1>
+      <p>Essays and articles by me, and coverage of my work in AI, business relationship management and the civil service.</p>
     </div>
-
-    <section id="writing">
-      <h2>Writing</h2>
-      <ul class="pub-list">
-        <li>
-          <a href="https://www.techup.ac.uk/the-systems-we-live-in-and-the-systems-we-build-ai-journey-of-a-techup-learner-by-sebastian-moore/">The Systems We Live In and the Systems We Build: AI Journey of a TechUP Learner</a>
-          <span class="meta">TechUP &middot; 2 July 2026</span>
-          <span class="desc">On moving from the care system to AI governance work, and why rigorous understanding matters more than credentials. Includes my capstone project, an Ethical AI in the Public Sector workshop.</span>
-        </li>
-      </ul>
-    </section>
-
-    <section id="govbrm">
-      <h2>GOVBRM Newsletter</h2>
-      <ul class="pub-list">
-        <li>
-          <span class="desc">GOVBRM is my newsletter on business relationship management in government: practical frameworks, case studies and lessons from the front line of public sector technology change. A full archive is coming soon.</span>
-        </li>
-      </ul>
-    </section>
-
-    <section id="press">
-      <h2>Press &amp; Features</h2>
-      <ul class="pub-list">
-        <li>
-          <a href="https://www.northumbria.ac.uk/about-us/news-events/news/seb-moore-2026/">From care leaver to government AI leader: Northumbria graduate's extraordinary journey</a>
-          <span class="meta">Northumbria University &middot; 2026</span>
-        </li>
-        <li>
-          <a href="https://brm.institute/2026-top-brms/">Top BRMs 2026</a>
-          <span class="meta">BRM Institute &middot; 2026</span>
-        </li>
-        <li>
-          <a href="https://www.civilservice.lgbt/news/2025/03/25/the-northern-echo-businessiq-award-finalist/">The Northern Echo BUSINESSiQ Award Finalist</a>
-          <span class="meta">Civil Service LGBT+ Network &middot; March 2025</span>
-        </li>
-      </ul>
-    </section>
-
   </div>
+
+  <section id="writing">
+    <div class="wrap section-grid">
+      <p class="label">Writing</p>
+      <div>
+        <article class="feature">
+          <p class="where">TechUP · 2 July 2026</p>
+          <h3><a href="https://www.techup.ac.uk/the-systems-we-live-in-and-the-systems-we-build-ai-journey-of-a-techup-learner-by-sebastian-moore/">The Systems We Live In and the Systems We Build: AI Journey of a TechUP Learner</a></h3>
+          <p>On moving from the care system to AI governance work, why rigorous understanding matters more than credentials, and a capstone workshop on ethical AI in the public sector.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="govbrm">
+    <div class="wrap section-grid">
+      <p class="label">GOVBRM</p>
+      <div>
+        <p class="note">GOVBRM is my newsletter on business relationship management in government: practical frameworks, case studies and lessons from the front line of public sector technology change. The full archive is moving to its own home shortly; in the meantime, new issues are announced on <a href="https://www.linkedin.com/in/sebx">LinkedIn</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="press">
+    <div class="wrap section-grid">
+      <p class="label">Press &amp; features</p>
+      <div>
+        <article class="feature">
+          <p class="where">Northumbria University · 2026</p>
+          <h3><a href="https://www.northumbria.ac.uk/about-us/news-events/news/seb-moore-2026/">From care leaver to government AI leader: Northumbria graduate's extraordinary journey</a></h3>
+        </article>
+        <article class="feature">
+          <p class="where">BRM Institute · 2026</p>
+          <h3><a href="https://brm.institute/2026-top-brms/">Top BRMs 2026</a></h3>
+        </article>
+        <article class="feature">
+          <p class="where">Civil Service LGBT+ Network · March 2025</p>
+          <h3><a href="https://www.civilservice.lgbt/news/2025/03/25/the-northern-echo-businessiq-award-finalist/">The Northern Echo BUSINESSiQ Award Finalist</a></h3>
+        </article>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer>
   <div class="wrap">
-    <p>&copy; 2026 Sebastian Moore</p>
-    <p class="disclaimer">This is a personal website. All views are my own and do not represent HM Treasury or HM Government.</p>
+    <p class="foot-links">
+      <a href="https://www.linkedin.com/in/sebx">LinkedIn</a>
+      <a href="https://x.com/sebxmoore">X</a>
+      <a href="/">Home</a>
+    </p>
+    <p>&copy; 2026 Sebastian Moore. This is a personal website; all views are my own and do not represent HM Treasury or HM Government.</p>
   </div>
 </footer>
 

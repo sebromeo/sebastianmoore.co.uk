@@ -24,7 +24,11 @@
   <meta name="twitter:description" content="Business Relationship Manager at HM Treasury. AI 100 UK, Government Global AI 100, Top BRMs 2026.">
   <meta name="twitter:image" content="https://sebastianmoore.co.uk/assets/sebastian-moore.jpg">
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230b2545'/%3E%3Ctext x='50' y='68' font-size='52' font-family='Georgia,serif' fill='%23ffffff' text-anchor='middle'%3ESM%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a1a18'/%3E%3Ctext x='50' y='69' font-size='46' font-family='Georgia,serif' fill='%23f4f1ec' text-anchor='middle' font-style='italic'%3ESM%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..600&display=swap" rel="stylesheet">
 
   <script type="application/ld+json">
   {
@@ -81,72 +85,145 @@
 
   <style>
     :root {
-      --navy: #0b2545;
-      --navy-soft: #13315c;
-      --ink: #1f2933;
-      --muted: #52606d;
-      --line: #e4e7eb;
-      --bg: #ffffff;
-      --bg-alt: #f5f7fa;
-      --accent: #8b1e3f;
+      --paper: #f7f5f1;
+      --paper-deep: #efece5;
+      --ink: #1a1a18;
+      --ink-soft: #44423d;
+      --ink-faint: #77746c;
+      --rule: #d9d5cc;
+      --oxblood: #6d1f2c;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: "Newsreader", Georgia, "Times New Roman", serif;
+      background: var(--paper);
       color: var(--ink);
-      background: var(--bg);
-      line-height: 1.65;
-      font-size: 17px;
+      font-size: 19px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
-    a { color: var(--navy-soft); }
-    a:hover { color: var(--accent); }
-    .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+    ::selection { background: var(--oxblood); color: var(--paper); }
 
-    header.site {
-      padding: 20px 0;
-      border-bottom: 1px solid var(--line);
-    }
-    header.site .wrap { display: flex; justify-content: space-between; align-items: center; }
-    .brand { font-weight: 700; color: var(--navy); text-decoration: none; font-size: 1.05rem; }
-    nav a { margin-left: 20px; text-decoration: none; font-size: 0.95rem; }
+    .wrap { max-width: 680px; margin: 0 auto; padding: 0 28px; }
 
-    .hero { padding: 64px 0 48px; }
-    .hero .kicker {
-      text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.8rem;
-      color: var(--accent); font-weight: 600; margin-bottom: 12px;
-    }
-    h1 { font-size: 2.3rem; line-height: 1.2; color: var(--navy); margin-bottom: 16px; }
-    .hero p.lede { font-size: 1.15rem; color: var(--muted); max-width: 620px; }
-    .hero-flex { display: flex; gap: 36px; align-items: flex-start; }
-    .hero-photo {
-      flex-shrink: 0; width: 168px; height: 168px; border-radius: 12px;
-      object-fit: cover; background: var(--bg-alt); border: 1px solid var(--line);
-    }
-    @media (max-width: 640px) {
-      .hero-flex { flex-direction: column; }
-      h1 { font-size: 1.8rem; }
+    a { color: inherit; text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; transition: text-decoration-color 0.15s ease; }
+    a:hover { text-decoration-color: var(--oxblood); }
+
+    .label {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
     }
 
-    .badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
-    .badge {
-      background: var(--bg-alt); border: 1px solid var(--line); border-radius: 999px;
-      padding: 6px 14px; font-size: 0.85rem; color: var(--navy-soft); font-weight: 500;
+    /* header */
+    header.site { padding: 30px 0 0; }
+    header.site .wrap { display: flex; justify-content: space-between; align-items: baseline; }
+    .brand {
+      font-style: italic; font-weight: 500; font-size: 1.05rem;
+      text-decoration: none; letter-spacing: 0.01em;
+    }
+    nav.site-nav a {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+      text-decoration: none; margin-left: 22px; color: var(--ink-soft);
+    }
+    nav.site-nav a:hover { color: var(--oxblood); }
+
+    /* hero */
+    .hero { padding: 96px 0 72px; }
+    .hero h1 {
+      font-size: clamp(2.6rem, 8vw, 4.2rem);
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -0.015em;
+      margin: 14px 0 28px;
+    }
+    .hero .lede {
+      font-size: 1.28rem;
+      line-height: 1.55;
+      color: var(--ink-soft);
+      max-width: 560px;
+    }
+    .hero .lede em { font-style: italic; }
+    .hero-meta {
+      margin-top: 36px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 0.85rem;
+      color: var(--ink-faint);
+      display: flex; flex-wrap: wrap; gap: 8px 0;
+    }
+    .hero-meta span:not(:last-child)::after { content: "·"; margin: 0 10px; color: var(--rule); }
+
+    /* sections */
+    section { border-top: 1px solid var(--rule); padding: 56px 0; }
+    .section-grid { display: grid; grid-template-columns: 150px 1fr; gap: 32px; }
+    @media (max-width: 620px) { .section-grid { grid-template-columns: 1fr; gap: 16px; } }
+    .section-grid > .label { padding-top: 7px; }
+
+    .prose p { margin-bottom: 1.1em; }
+    .prose p:last-child { margin-bottom: 0; }
+
+    .portrait {
+      float: right; width: 150px; height: 190px; object-fit: cover;
+      margin: 4px 0 16px 24px;
+      filter: grayscale(18%) contrast(1.03);
+      border: 1px solid var(--rule);
+    }
+    @media (max-width: 480px) { .portrait { width: 110px; height: 140px; margin-left: 16px; } }
+
+    /* recognition */
+    .rec-list { list-style: none; }
+    .rec-list li {
+      display: flex; justify-content: space-between; align-items: baseline; gap: 20px;
+      padding: 13px 0; border-bottom: 1px solid var(--rule);
+    }
+    .rec-list li:first-child { padding-top: 0; }
+    .rec-list li:last-child { border-bottom: none; padding-bottom: 0; }
+    .rec-list .what { font-size: 1.02rem; }
+    .rec-list .what .by { color: var(--ink-faint); font-style: italic; }
+    .rec-list .year {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 0.8rem; color: var(--ink-faint); white-space: nowrap;
+      font-variant-numeric: tabular-nums;
     }
 
-    section { padding: 40px 0; border-top: 1px solid var(--line); }
-    h2 { font-size: 1.4rem; color: var(--navy); margin-bottom: 16px; }
-    section p + p { margin-top: 14px; }
-
-    .links-list { list-style: none; margin-top: 8px; }
-    .links-list li { padding: 12px 0; border-bottom: 1px solid var(--line); }
-    .links-list li:last-child { border-bottom: none; }
-    .links-list .src { display: block; font-size: 0.85rem; color: var(--muted); }
-
-    footer {
-      padding: 32px 0 48px; border-top: 1px solid var(--line);
-      font-size: 0.85rem; color: var(--muted);
+    /* writing */
+    .feature { margin-bottom: 28px; }
+    .feature:last-child { margin-bottom: 0; }
+    .feature h3 { font-size: 1.25rem; font-weight: 500; line-height: 1.3; margin-bottom: 6px; }
+    .feature h3 a { text-decoration-color: transparent; }
+    .feature h3 a:hover { text-decoration-color: var(--oxblood); }
+    .feature .where {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint);
+      margin-bottom: 8px;
     }
-    footer .disclaimer { margin-top: 8px; }
+    .feature p { color: var(--ink-soft); font-size: 1rem; }
+    .more-link {
+      display: inline-block; margin-top: 26px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--oxblood); text-decoration: none;
+    }
+    .more-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+    /* contact */
+    .contact-line { font-size: 1.15rem; }
+
+    /* footer */
+    footer { border-top: 1px solid var(--rule); background: var(--paper-deep); padding: 36px 0 48px; }
+    footer p {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 0.8rem; color: var(--ink-faint); line-height: 1.7;
+    }
+    footer .foot-links { margin-bottom: 14px; }
+    footer .foot-links a { text-decoration: none; color: var(--ink-soft); margin-right: 18px; }
+    footer .foot-links a:hover { color: var(--oxblood); }
   </style>
 </head>
 <body>
@@ -154,81 +231,113 @@
 <header class="site">
   <div class="wrap">
     <a class="brand" href="/">Sebastian Moore</a>
-    <nav>
-      <a href="/publications.html">Publications &amp; Press</a>
-      <a href="https://www.linkedin.com/in/sebx">LinkedIn</a>
-      <a href="https://x.com/sebxmoore">X</a>
+    <nav class="site-nav">
+      <a href="/publications.html">Writing</a>
+      <a href="#recognition">Recognition</a>
+      <a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <div class="wrap">
 
-    <div class="hero">
-      <div class="hero-flex">
-        <img class="hero-photo" src="/assets/sebastian-moore.jpg" alt="Sebastian Moore, Business Relationship Manager at HM Treasury" width="168" height="168">
-        <div>
-          <p class="kicker">AI &middot; Digital Transformation &middot; UK Civil Service</p>
-          <h1>Sebastian Moore</h1>
-          <p class="lede">Business Relationship Manager at HM Treasury, working on technology change and digital innovation from the Darlington Economic Campus. Named in the AI 100 UK and Government Global AI 100 lists.</p>
-        </div>
-      </div>
-      <div class="badges">
-        <span class="badge">AI 100 UK &middot; 2025</span>
-        <span class="badge">Government Global AI 100 &middot; 2025</span>
-        <span class="badge">Top BRMs &middot; 2026</span>
-        <span class="badge">Digital Leader Top 100 UK &middot; 2024</span>
+  <div class="hero">
+    <div class="wrap">
+      <p class="label">Business Relationship Manager, HM Treasury</p>
+      <h1>Technology change that actually lands.</h1>
+      <p class="lede">I work at the point where the Treasury's people meet its technology: aligning teams, brokering priorities, and helping government adopt AI <em>responsibly</em> rather than fashionably.</p>
+      <div class="hero-meta">
+        <span>Darlington Economic Campus</span>
+        <span>AI 100 UK</span>
+        <span>Government Global AI 100</span>
+        <span>Top BRMs 2026</span>
       </div>
     </div>
-
-    <section id="about">
-      <h2>About</h2>
-      <p>I grew up in the care system in County Durham. Two days after graduating from Northumbria University with a degree in International Relations and Politics, I joined HM Treasury's newly established Darlington Economic Campus through the Civil Service Care Leaver Internship Scheme.</p>
-      <p>Today I work as a Business Relationship Manager in Treasury Business Solutions, sitting between the department's people and its technology. My focus is making digital change land well: aligning stakeholders, strengthening strategic partnerships, and helping colleagues build confidence with new tools, including AI.</p>
-      <p>Outside the day job, I co-founded and co-chair the cross-government Care Leavers' Network, supporting care-experienced staff across departments and widening the routes into public service. That lived experience shapes how I think about technology too. Systems, whether social or digital, work best when they are designed for the people with the least power in them.</p>
-      <p>I write about business relationship management and public sector digital practice, and I completed TechUP's AI Foundations programme, where my capstone was an Ethical AI in the Public Sector workshop for practitioners navigating government AI adoption.</p>
-    </section>
-
-    <section id="recognition">
-      <h2>Recognition</h2>
-      <ul class="links-list">
-        <li>AI 100 UK List, 2025 <span class="src">Recognising the UK's leading voices in artificial intelligence</span></li>
-        <li>Government Global AI 100 List, 2025 <span class="src">Global recognition for AI leadership in government</span></li>
-        <li><a href="https://brm.institute/2026-top-brms/">BRM Institute Top BRMs, 2026</a> <span class="src">Global recognition for business relationship management leadership</span></li>
-        <li>Digital Leader Top 100 UK List, 2024 <span class="src">Recognising the UK's most influential people in digital</span></li>
-        <li>North East Tech Awards, Rising Star finalist, 2025</li>
-        <li>The Northern Echo BUSINESSiQ Awards, Diversity &amp; Inclusion finalist, 2025</li>
-      </ul>
-    </section>
-
-    <section id="featured">
-      <h2>Featured</h2>
-      <ul class="links-list">
-        <li>
-          <a href="https://www.northumbria.ac.uk/about-us/news-events/news/seb-moore-2026/">From care leaver to government AI leader</a>
-          <span class="src">Northumbria University, 2026</span>
-        </li>
-        <li>
-          <a href="https://www.techup.ac.uk/the-systems-we-live-in-and-the-systems-we-build-ai-journey-of-a-techup-learner-by-sebastian-moore/">The Systems We Live In and the Systems We Build</a>
-          <span class="src">TechUP, July 2026</span>
-        </li>
-      </ul>
-      <p style="margin-top:16px"><a href="/publications.html">All publications and press &rarr;</a></p>
-    </section>
-
-    <section id="contact">
-      <h2>Get in touch</h2>
-      <p>The best way to reach me is on <a href="https://www.linkedin.com/in/sebx">LinkedIn</a>. I also post on <a href="https://x.com/sebxmoore">X (@sebxmoore)</a>.</p>
-    </section>
-
   </div>
+
+  <section id="about">
+    <div class="wrap section-grid">
+      <p class="label">About</p>
+      <div class="prose">
+        <img class="portrait" src="/assets/sebastian-moore.jpg" alt="Sebastian Moore, Business Relationship Manager at HM Treasury" width="150" height="190" onerror="this.style.display='none'">
+        <p>I grew up in care in County Durham. Two days after graduating from Northumbria University, I started at HM Treasury's new Darlington Economic Campus through the Civil Service Care Leaver Internship Scheme. I have been there since, now as a Business Relationship Manager in Treasury Business Solutions.</p>
+        <p>The job, done properly, is translation. Departments do not struggle with technology because the technology is bad; they struggle because nobody owns the relationship between the people who need things and the people who build them. That relationship is what I manage, from everyday service demand through to how the department approaches AI.</p>
+        <p>Outside the day job I co-founded and co-chair the cross-government Care Leavers' Network, which supports care-experienced civil servants and widens the routes into public service. That background is not a footnote to the technology work. Growing up inside systems that were designed around you, rather than with you, teaches you exactly what to look for when governments start automating decisions.</p>
+        <p>I write <a href="/publications.html">GOVBRM</a>, a newsletter on business relationship management in government, and completed TechUP's AI Foundations programme with a capstone workshop on ethical AI in the public sector.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="recognition">
+    <div class="wrap section-grid">
+      <p class="label">Recognition</p>
+      <ul class="rec-list">
+        <li>
+          <span class="what"><a href="https://brm.institute/2026-top-brms/">Top BRMs</a> <span class="by">BRM Institute</span></span>
+          <span class="year">2026</span>
+        </li>
+        <li>
+          <span class="what">AI 100 UK List</span>
+          <span class="year">2025</span>
+        </li>
+        <li>
+          <span class="what">Government Global AI 100 List</span>
+          <span class="year">2025</span>
+        </li>
+        <li>
+          <span class="what">Rising Star, finalist <span class="by">North East Tech Awards</span></span>
+          <span class="year">2025</span>
+        </li>
+        <li>
+          <span class="what">Diversity &amp; Inclusion, finalist <span class="by">The Northern Echo BUSINESSiQ Awards</span></span>
+          <span class="year">2025</span>
+        </li>
+        <li>
+          <span class="what">Digital Leader Top 100 UK List</span>
+          <span class="year">2024</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="writing">
+    <div class="wrap section-grid">
+      <p class="label">Selected writing</p>
+      <div>
+        <article class="feature">
+          <p class="where">TechUP · July 2026</p>
+          <h3><a href="https://www.techup.ac.uk/the-systems-we-live-in-and-the-systems-we-build-ai-journey-of-a-techup-learner-by-sebastian-moore/">The Systems We Live In and the Systems We Build</a></h3>
+          <p>On moving from the care system to AI governance work, and why rigorous understanding matters more than credentials.</p>
+        </article>
+        <article class="feature">
+          <p class="where">Northumbria University · 2026</p>
+          <h3><a href="https://www.northumbria.ac.uk/about-us/news-events/news/seb-moore-2026/">From care leaver to government AI leader</a></h3>
+          <p>Northumbria's feature on the road from County Durham to the AI 100 UK list.</p>
+        </article>
+        <a class="more-link" href="/publications.html">All writing &amp; press</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap section-grid">
+      <p class="label">Contact</p>
+      <div>
+        <p class="contact-line">The quickest way to reach me is <a href="https://www.linkedin.com/in/sebx">LinkedIn</a>. I also post on <a href="https://x.com/sebxmoore">X</a>.</p>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer>
   <div class="wrap">
-    <p>&copy; 2026 Sebastian Moore</p>
-    <p class="disclaimer">This is a personal website. All views are my own and do not represent HM Treasury or HM Government.</p>
+    <p class="foot-links">
+      <a href="https://www.linkedin.com/in/sebx">LinkedIn</a>
+      <a href="https://x.com/sebxmoore">X</a>
+      <a href="/publications.html">Writing &amp; press</a>
+    </p>
+    <p>&copy; 2026 Sebastian Moore. This is a personal website; all views are my own and do not represent HM Treasury or HM Government.</p>
   </div>
 </footer>
 
