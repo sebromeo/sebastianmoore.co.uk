@@ -335,7 +335,7 @@
     .recs { overflow: hidden; padding: 84px 0; background: var(--bg-tint); border-top: 1px solid var(--rule); }
     .recs-head { max-width: 1060px; margin: 0 auto 48px; padding: 0 28px; }
     .recs-head h2 { font-family: "Source Serif 4", Georgia, serif; font-size: 1.9rem; font-weight: 600; color: var(--navy); margin-top: 16px; letter-spacing: -0.01em; }
-    .marquee { display: flex; gap: 26px; width: max-content; animation: drift 55s linear infinite; padding: 0 14px; }
+    .marquee { display: flex; gap: 26px; width: max-content; animation: drift 130s linear infinite; padding: 0 14px; }
     .marquee:hover { animation-play-state: paused; }
     @media (prefers-reduced-motion: reduce) { .marquee { animation: none; flex-wrap: wrap; width: auto; } }
     @keyframes drift { from { transform: translateX(0); } to { transform: translateX(-50%); } }
@@ -548,20 +548,68 @@
   </div>
   <div class="marquee" aria-label="Recommendations from LinkedIn">
     <div class="rec-card">
-      <blockquote>I have always believed that successful digital transformation is less about technology and more about culture, and Sebastian instinctively understands this. He is a rare example of a true connector in government. I was particularly impressed by his leadership of the recent Treasury Innovation Day, where he brought together the right people to tackle genuinely hard problems.</blockquote>
+      <blockquote>I've always believed that successful digital transformation is less about technology and more about culture and Sebastian instinctively understands this. He is a rare example of a true connector in government. Sebastian is fast becoming an influential voice in the future of GovTech.</blockquote>
       <p class="who"><span class="name">Mike Potter</span><br><span class="title">Former UK Government Chief Digital Officer</span></p>
     </div>
     <div class="rec-card">
-      <blockquote>Sebastian's enthusiasm and collaborative spirit were always evident. We collaborated on exploring leadership challenges in the age of AI, where Sebastian brought thoughtful perspectives on how technology is reshaping workplace dynamics and team management.</blockquote>
+      <blockquote>Sebastian embodies the spirit of Alexander Hamilton: he is non-stop. He connects people, discerns the strategic picture with precision, and ensures that success follows in his wake. He doesn't throw away his shot!</blockquote>
+      <p class="who"><span class="name">Paul Farrow, CITP MBCS</span><br><span class="title">Head of Digital Services, HM Treasury</span></p>
+    </div>
+    <div class="rec-card">
+      <blockquote>Sebastian stands out as an exceptional partner of ours within Whitehall. We were blown away by HMT's Innovation Day, where Sebastian was part of a small team charged with organising and managing a large-scale gathering of innovators in an event of national significance.</blockquote>
+      <p class="who"><span class="name">James Smith</span><br><span class="title">Founder, Government Transformation Magazine</span></p>
+    </div>
+    <div class="rec-card">
+      <blockquote>Sebastian is a motivated and effective leader. He has expert coordination skills that enable him to make a tangible impact within organisations. He is able to effectively work with a broad network of people and achieve outcomes that deliver value.</blockquote>
+      <p class="who"><span class="name">Jonny Williams</span><br><span class="title">Chief Digital Adviser, UK Public Sector, Red Hat</span></p>
+    </div>
+    <div class="rec-card">
+      <blockquote>An exceptionally driven professional with a profound understanding of business transformation and AI. What sets Sebastian apart is his ability to navigate a complex partner organisation landscape, where he expertly matures relationships and secures long-term customer success.</blockquote>
+      <p class="who"><span class="name">Tamas Laszlo Gaal</span><br><span class="title">Asset &amp; CMDB Manager, NS&amp;I</span></p>
+    </div>
+    <div class="rec-card">
+      <blockquote>Sebastian is a visionary technologist, deeply committed to public service. He is not only an exceptional professional but also a compassionate advocate for those who often go unheard.</blockquote>
+      <p class="who"><span class="name">Darren Evans</span><br><span class="title">CEO &amp; Founder, After Cloud</span></p>
+    </div>
+    <div class="rec-card">
+      <blockquote>Sebastian's enthusiasm and collaborative spirit were always evident. What stood out most was his genuine interest in innovation and his ability to foster strong working relationships. Sebastian would be an asset to any team.</blockquote>
       <p class="who"><span class="name">Dominic Evans</span><br><span class="title">Copilot Lead, Department for Science, Innovation and Technology</span></p>
     </div>
+    <div class="rec-card">
+      <blockquote>Sebastian mixed kindness, clarity and firmness in his dealings with me and colleagues, and is both warm and astute in equal measure. A rare combination.</blockquote>
+      <p class="who"><span class="name">Marie-Elise Howells</span><br><span class="title">Policy Professional, Department for Culture, Media and Sport</span></p>
+    </div>
     <div class="rec-card" aria-hidden="true">
-      <blockquote>I have always believed that successful digital transformation is less about technology and more about culture, and Sebastian instinctively understands this. He is a rare example of a true connector in government. I was particularly impressed by his leadership of the recent Treasury Innovation Day, where he brought together the right people to tackle genuinely hard problems.</blockquote>
+      <blockquote>I've always believed that successful digital transformation is less about technology and more about culture and Sebastian instinctively understands this. He is a rare example of a true connector in government. Sebastian is fast becoming an influential voice in the future of GovTech.</blockquote>
       <p class="who"><span class="name">Mike Potter</span><br><span class="title">Former UK Government Chief Digital Officer</span></p>
     </div>
     <div class="rec-card" aria-hidden="true">
-      <blockquote>Sebastian's enthusiasm and collaborative spirit were always evident. We collaborated on exploring leadership challenges in the age of AI, where Sebastian brought thoughtful perspectives on how technology is reshaping workplace dynamics and team management.</blockquote>
+      <blockquote>Sebastian embodies the spirit of Alexander Hamilton: he is non-stop. He connects people, discerns the strategic picture with precision, and ensures that success follows in his wake. He doesn't throw away his shot!</blockquote>
+      <p class="who"><span class="name">Paul Farrow, CITP MBCS</span><br><span class="title">Head of Digital Services, HM Treasury</span></p>
+    </div>
+    <div class="rec-card" aria-hidden="true">
+      <blockquote>Sebastian stands out as an exceptional partner of ours within Whitehall. We were blown away by HMT's Innovation Day, where Sebastian was part of a small team charged with organising and managing a large-scale gathering of innovators in an event of national significance.</blockquote>
+      <p class="who"><span class="name">James Smith</span><br><span class="title">Founder, Government Transformation Magazine</span></p>
+    </div>
+    <div class="rec-card" aria-hidden="true">
+      <blockquote>Sebastian is a motivated and effective leader. He has expert coordination skills that enable him to make a tangible impact within organisations. He is able to effectively work with a broad network of people and achieve outcomes that deliver value.</blockquote>
+      <p class="who"><span class="name">Jonny Williams</span><br><span class="title">Chief Digital Adviser, UK Public Sector, Red Hat</span></p>
+    </div>
+    <div class="rec-card" aria-hidden="true">
+      <blockquote>An exceptionally driven professional with a profound understanding of business transformation and AI. What sets Sebastian apart is his ability to navigate a complex partner organisation landscape, where he expertly matures relationships and secures long-term customer success.</blockquote>
+      <p class="who"><span class="name">Tamas Laszlo Gaal</span><br><span class="title">Asset &amp; CMDB Manager, NS&amp;I</span></p>
+    </div>
+    <div class="rec-card" aria-hidden="true">
+      <blockquote>Sebastian is a visionary technologist, deeply committed to public service. He is not only an exceptional professional but also a compassionate advocate for those who often go unheard.</blockquote>
+      <p class="who"><span class="name">Darren Evans</span><br><span class="title">CEO &amp; Founder, After Cloud</span></p>
+    </div>
+    <div class="rec-card" aria-hidden="true">
+      <blockquote>Sebastian's enthusiasm and collaborative spirit were always evident. What stood out most was his genuine interest in innovation and his ability to foster strong working relationships. Sebastian would be an asset to any team.</blockquote>
       <p class="who"><span class="name">Dominic Evans</span><br><span class="title">Copilot Lead, Department for Science, Innovation and Technology</span></p>
+    </div>
+    <div class="rec-card" aria-hidden="true">
+      <blockquote>Sebastian mixed kindness, clarity and firmness in his dealings with me and colleagues, and is both warm and astute in equal measure. A rare combination.</blockquote>
+      <p class="who"><span class="name">Marie-Elise Howells</span><br><span class="title">Policy Professional, Department for Culture, Media and Sport</span></p>
     </div>
   </div>
   <p class="recs-more"><a href="https://www.linkedin.com/in/sebx/details/recommendations/">Read all 16 recommendations on LinkedIn &rarr;</a></p>
@@ -588,6 +636,11 @@
           <p>On why business relationship management is the connective tissue of government digital delivery.</p>
         </article>
         <article class="feature">
+          <p class="where">ICS Digital Blog, GOV.UK &middot; September 2024</p>
+          <h3><a href="https://icsdigital.blog.gov.uk/2024/09/11/empowering-the-digital-journey-building-digital-proficiency-in-the-public-sector/">Empowering the Digital Journey: Building Digital Proficiency in the Public Sector</a></h3>
+          <p>On the cross-departmental upskilling sessions that brought generative AI, automation and digital inclusion to thousands of civil servants.</p>
+        </article>
+        <article class="feature">
           <p class="where">TechUP &middot; July 2026</p>
           <h3><a href="https://www.techup.ac.uk/the-systems-we-live-in-and-the-systems-we-build-ai-journey-of-a-techup-learner-by-sebastian-moore/">The Systems We Live In and the Systems We Build</a></h3>
           <p>On moving from the care system to AI governance work, and why rigorous understanding matters more than credentials.</p>
@@ -607,6 +660,9 @@
           <a href="https://x.com/sebxmoore">X &middot; @sebxmoore</a>
           <a href="https://www.instagram.com/sebxmoore/">Instagram &middot; @sebxmoore</a>
           <a href="https://www.tiktok.com/@sebxmoore">TikTok &middot; @sebxmoore</a>
+        </div>
+        <div style="margin-top:28px">
+          <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="light" data-type="HORIZONTAL" data-vanity="sebx" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://uk.linkedin.com/in/sebx?trk=profile-badge">Sebastian Moore</a></div>
         </div>
       </div>
     </div>
@@ -634,6 +690,7 @@
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 
 </body>
 </html>
