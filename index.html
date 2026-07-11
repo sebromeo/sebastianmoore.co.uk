@@ -457,10 +457,7 @@
     .btn-message:hover { background: var(--navy-deep); color: #fff; }
     .btn-ghost { background: transparent; color: var(--blue-deep); border: 1px solid var(--blue); margin-left: 10px; }
     .btn-ghost:hover { background: var(--blue-deep); color: #fff; }
-    @media (prefers-color-scheme: dark) {
-      .btn-ghost { color: var(--blue); }
-      .btn-ghost:hover { background: var(--blue); color: #04141f; }
-    }
+
     @media (max-width: 560px) { .btn-ghost { margin-left: 0; margin-top: 10px; } }
     @media (prefers-color-scheme: dark) {
       .btn-message { color: #04141f; }
@@ -703,6 +700,10 @@
     .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .reveal.in { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) { .reveal { transform: none; transition: opacity 0.6s ease; } }
+    @media (prefers-color-scheme: dark) {
+      .btn-message.btn-ghost { background: transparent; color: var(--blue); border-color: var(--blue); }
+      .btn-message.btn-ghost:hover { background: var(--blue); color: #04141f; }
+    }
   </style>
 </head>
 <body>
@@ -758,7 +759,6 @@
     <div class="wrap-wide section-grid reveal">
       <p class="label"><span class="num" aria-hidden="true">01</span>About</p>
       <div class="prose">
-        <img class="portrait" src="/assets/sebastian-moore.jpg" alt="Sebastian Moore, AI governance and digital strategy specialist, HM Treasury" width="168" height="210" onerror="this.style.display='none'">
         <h2 class="section-title">A connector at the centre of government technology.</h2>
         <p class="accent-phrase">Translation, done properly.</p>
         <p>I work at HM Treasury as a Senior Business Relationship Manager, specialising in <strong>AI governance and digital strategy</strong>, partnering with organisations across government. The job, done properly, is translation: sitting between the people who need things and the people who build them, and making sure change is driven by the business rather than done to it.</p>
