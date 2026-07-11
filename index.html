@@ -25,7 +25,7 @@
   <meta name="twitter:description" content="Future CIO 100. AI 100 UK. Government AI 100. Global Top BRM 2026. Author of GOVBRM.">
   <meta name="twitter:image" content="https://sebastianmoore.co.uk/assets/sebastian-moore.jpg">
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23f4f1ec'/%3E%3Ctext x='50' y='73' font-family='Didot,Playfair Display,Georgia,serif' font-size='56' font-weight='500' letter-spacing='-3' fill='%231a1a18' text-anchor='middle'%3ESM%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3CradialGradient id='g' cx='35%25' cy='28%25' r='85%25'%3E%3Cstop offset='0%25' stop-color='%230e3a52'/%3E%3Cstop offset='100%25' stop-color='%2304141f'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='48' fill='url(%23g)'/%3E%3Ctext x='51.8' y='73.8' font-family='Didot,Playfair Display,Georgia,serif' font-size='52' font-weight='600' letter-spacing='-3' fill='rgba(0,0,0,0.55)' text-anchor='middle'%3ESM%3C/text%3E%3Ctext x='48.6' y='70.7' font-family='Didot,Playfair Display,Georgia,serif' font-size='52' font-weight='600' letter-spacing='-3' fill='rgba(255,255,255,0.3)' text-anchor='middle'%3ESM%3C/text%3E%3Ctext x='50' y='72' font-family='Didot,Playfair Display,Georgia,serif' font-size='52' font-weight='600' letter-spacing='-3' fill='%23f4f1ec' text-anchor='middle'%3ESM%3C/text%3E%3C/svg%3E">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -315,7 +315,45 @@
                   radial-gradient(700px 460px at 8% 92%, rgba(14,116,144,0.18), transparent 60%);
       pointer-events: none;
     }
-    .hero .wrap-wide { position: relative; }
+    .hero .wrap-wide { position: relative; z-index: 2; }
+    .hero-grid {
+      position: absolute; inset: -25% 0; z-index: 0; pointer-events: none;
+      background-image: radial-gradient(rgba(45,212,191,0.13) 1px, transparent 1px);
+      background-size: 36px 36px; will-change: transform;
+    }
+    .hero-float-wrap { position: absolute; right: 5%; top: 150px; z-index: 1; pointer-events: none; will-change: transform; }
+    .hero-float {
+      width: 250px; height: 250px; border-radius: 50%; object-fit: cover; object-position: 50% 18%;
+      border: 3px solid rgba(45,212,191,0.55);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.45), 0 0 0 10px rgba(45,212,191,0.07);
+      animation: floaty 10s ease-in-out infinite;
+    }
+    @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-16px); } }
+    @media (max-width: 1080px) { .hero-float-wrap { display: none; } }
+    @media (prefers-reduced-motion: reduce) { .hero-float { animation: none; } }
+
+    .mask { overflow: hidden; }
+    .mask .mask-inner { display: block; transform: translateY(112%); animation: maskup 0.85s cubic-bezier(0.2, 0.7, 0.2, 1) forwards; }
+    .mask.d2 .mask-inner { animation-delay: 0.15s; }
+    .mask.d3 .mask-inner { animation-delay: 0.3s; }
+    @keyframes maskup { to { transform: none; } }
+    @media (prefers-reduced-motion: reduce) { .mask .mask-inner { transform: none; animation: none; } }
+
+    .accent-phrase .w { opacity: 0.28; transition: opacity 0.3s linear; }
+    .accent-phrase .w.lit { opacity: 1; }
+    @media (prefers-reduced-motion: reduce) { .accent-phrase .w { opacity: 1; } }
+
+    .timeline .spine {
+      position: absolute; left: 7px; top: 6px; width: 2px; height: 0;
+      background: var(--blue); z-index: 1;
+    }
+    .timeline li::before { border-color: var(--rule); transition: border-color 0.4s ease; }
+    .timeline li.lit::before { border-color: var(--blue); }
+    @media (prefers-reduced-motion: reduce) { .timeline li::before { border-color: var(--blue); } .timeline .spine { display: none; } }
+
+    .stag { opacity: 0; transform: translateY(14px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .stag.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .stag { opacity: 1; transform: none; transition: none; } }
     .hero .kicker {
       font-size: 0.76rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #2dd4bf;
       margin-bottom: 24px;
@@ -635,11 +673,13 @@
 </header>
 
   <div class="hero">
+    <div class="hero-grid" id="heroGrid" aria-hidden="true"></div>
+    <div class="hero-float-wrap" id="heroFloat" aria-hidden="true"><img class="hero-float" src="/assets/sebastian-moore.jpg" alt=""></div>
     <div class="wrap-wide">
       <p class="kicker">AI Governance &amp; Digital Strategy &middot; UK Government</p>
-      <h1>Technology change that actually lands.</h1>
-      <p class="strap">Ambition, translated into delivery.</p>
-      <p class="lede">I lead digital transformation where it is most difficult: at the heart of government. As a Senior Business Relationship Manager at <strong>HM Treasury</strong>, I turn policy ambition into operational reality and help the public sector adopt AI <strong>responsibly</strong> rather than fashionably.</p>
+      <h1 class="mask"><span class="mask-inner">Technology change that actually lands.</span></h1>
+      <p class="strap mask d2"><span class="mask-inner">Ambition, translated into delivery.</span></p>
+      <p class="lede mask d3"><span class="mask-inner">I lead digital transformation where it is most difficult: at the heart of government. As a Senior Business Relationship Manager at <strong>HM Treasury</strong>, I turn policy ambition into operational reality and help the public sector adopt AI <strong>responsibly</strong> rather than fashionably.</span></p>
       <div class="hero-social">
         <a href="https://www.linkedin.com/in/sebx">LinkedIn</a><span class="dot" aria-hidden="true">/</span>
         <a href="https://x.com/sebxmoore">X</a><span class="dot" aria-hidden="true">/</span>
@@ -651,10 +691,10 @@
 
   <div class="stats">
     <div class="wrap-wide">
-      <div class="stat"><div class="num">5</div><div class="what">National &amp; global recognition lists</div></div>
-      <div class="stat"><div class="num">1,250<span class="accent">+</span></div><div class="what">GOVBRM readers</div></div>
-      <div class="stat"><div class="num">2,000<span class="accent">+</span></div><div class="what">Civil servants upskilled</div></div>
-      <div class="stat"><div class="num">16<span class="accent">+</span></div><div class="what">Professional certifications</div></div>
+      <div class="stat"><div class="num"><span class="cnt" data-target="5">5</span></div><div class="what">National &amp; global recognition lists</div></div>
+      <div class="stat"><div class="num"><span class="cnt" data-target="1250">1,250</span><span class="accent">+</span></div><div class="what">GOVBRM readers</div></div>
+      <div class="stat"><div class="num"><span class="cnt" data-target="2000">2,000</span><span class="accent">+</span></div><div class="what">Civil servants upskilled</div></div>
+      <div class="stat"><div class="num"><span class="cnt" data-target="16">16</span><span class="accent">+</span></div><div class="what">Professional certifications</div></div>
     </div>
   </div>
 </div>
@@ -688,7 +728,7 @@
       <div>
         <h2 class="section-title">From care in County Durham to the centre of government.</h2>
         <p class="accent-phrase">Potential is evenly distributed. Opportunity is not.</p>
-        <ol class="timeline">
+        <ol class="timeline" id="timeline"><div class="spine" id="spine" aria-hidden="true"></div>
           <li><span class="year">2015</span><p>Begins a decade of youth justice volunteering with Durham County Council.</p></li>
           <li><span class="year">2022</span><p>Graduates from Northumbria University and joins HM Treasury's new Darlington Economic Campus through the Civil Service Care Leaver Internship Scheme, two days later. Wins the HM Treasury Professional Award for Innovation the same year.</p></li>
           <li><span class="year">2023</span><p>Presents lived-experience evidence to the cross-government ministerial board on care leavers while at DCMS, then moves to DSIT to run the Group Chief Digital &amp; Information Officer's office.</p></li>
@@ -1291,6 +1331,83 @@
     });
   }, { rootMargin: '-40% 0px -55% 0px' });
   sections.forEach(s => navIO.observe(s));
+
+  // ---- cinematic engine ----
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const finePointer = matchMedia('(pointer: fine)').matches;
+
+  // stat count-up, once, on first view
+  if (!reducedMotion) {
+    const cntIO = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        cntIO.unobserve(e.target);
+        const el = e.target, target = parseInt(el.dataset.target, 10), t0 = performance.now(), dur = 1200;
+        (function tick(now) {
+          const p = Math.min((now - t0) / dur, 1), eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.round(target * eased).toLocaleString('en-GB');
+          if (p < 1) requestAnimationFrame(tick);
+        })(t0);
+      });
+    }, { threshold: 0.6 });
+    document.querySelectorAll('.cnt').forEach(el => cntIO.observe(el));
+  }
+
+  // accent phrase word lighting
+  const phrases = [...document.querySelectorAll('.accent-phrase')];
+  phrases.forEach(p => {
+    p.innerHTML = p.textContent.trim().split(/\s+/).map(w => '<span class="w">' + w + '</span>').join(' ');
+  });
+  const phraseWords = phrases.map(p => [...p.querySelectorAll('.w')]);
+
+  // credential cards + badges stagger
+  document.querySelectorAll('.cred-grid .cred-card, .badges-row img').forEach((el, i) => {
+    el.classList.add('stag');
+    el.style.transitionDelay = ((i % 10) * 45) + 'ms';
+  });
+  const stagIO = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); stagIO.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.stag').forEach(el => stagIO.observe(el));
+
+  // scroll-driven effects: hero parallax, word lighting, timeline spine
+  const heroGrid = document.getElementById('heroGrid');
+  const heroFloat = document.getElementById('heroFloat');
+  const timeline = document.getElementById('timeline');
+  const spine = document.getElementById('spine');
+  function cinematicFrame() {
+    if (finePointer && !reducedMotion) {
+      const sy = scrollY;
+      if (heroGrid && sy < 1400) heroGrid.style.transform = 'translateY(' + (sy * 0.3) + 'px)';
+      if (heroFloat && sy < 1400) heroFloat.style.transform = 'translateY(' + (sy * 0.14) + 'px)';
+    }
+    if (!reducedMotion) {
+      const trigger = innerHeight * 0.72;
+      phrases.forEach((p, i) => {
+        const r = p.getBoundingClientRect();
+        if (r.bottom < 0 || r.top > innerHeight) return;
+        const f = Math.max(0, Math.min(1, (trigger - r.top) / (innerHeight * 0.35)));
+        const litCount = Math.round(f * phraseWords[i].length);
+        phraseWords[i].forEach((w, j) => w.classList.toggle('lit', j < litCount));
+      });
+      if (timeline && spine) {
+        const r = timeline.getBoundingClientRect();
+        if (r.bottom > 0 && r.top < innerHeight) {
+          const prog = Math.max(0, Math.min(1, (trigger - r.top) / r.height));
+          spine.style.height = (prog * 100) + '%';
+          timeline.querySelectorAll('li').forEach(li => {
+            li.classList.toggle('lit', li.getBoundingClientRect().top < trigger);
+          });
+        }
+      }
+    }
+  }
+  let cinePending = false;
+  addEventListener('scroll', () => {
+    if (!cinePending) { cinePending = true; requestAnimationFrame(() => { cinematicFrame(); cinePending = false; }); }
+  }, { passive: true });
+  cinematicFrame();
+  if (reducedMotion) phrases.forEach((p, i) => phraseWords[i].forEach(w => w.classList.add('lit')));
 
   // external links open in a new tab
   document.querySelectorAll('a[href^="http"]').forEach(a => {
