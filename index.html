@@ -154,7 +154,23 @@
         },
         {
           "@type": "Event",
-          "name": "The Orchestration Layer, Services Week 2026",
+          "name": "BRM and AI at Digital Leaders AI Week 2026",
+          "startDate": "2026-10-01",
+          "endDate": "2026-10-01",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+          "url": "https://aiweek.digileaders.com/",
+          "image": "https://sebastianmoore.co.uk/assets/sebastian-moore.jpg",
+          "isAccessibleForFree": true,
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP", "availability": "https://schema.org/InStock", "validFrom": "2026-07-11", "url": "https://aiweek.digileaders.com/" },
+          "organizer": { "@type": "Organization", "name": "Digital Leaders", "url": "https://digileaders.com/" },
+          "performer": { "@id": "https://sebastianmoore.co.uk/#sebastian-moore" },
+          "description": "Sebastian Moore hosts a session on business relationship management and AI at Digital Leaders' AI Week, a ten-day online summit. Free to attend; session date to be confirmed.",
+          "location": { "@type": "VirtualLocation", "url": "https://aiweek.digileaders.com/" }
+        },
+        {
+          "@type": "Event",
+          "name": "The Orchestration Layer: BRM in Modern Service Delivery, Services Week 2026",
           "startDate": "2026-02-02",
           "endDate": "2026-02-06",
           "eventStatus": "https://schema.org/EventScheduled",
@@ -165,7 +181,7 @@
           "performer": { "@id": "https://sebastianmoore.co.uk/#sebastian-moore" },
           "recordedIn": {
             "@type": "VideoObject",
-            "name": "The Orchestration Layer",
+            "name": "The Orchestration Layer: BRM in Modern Service Delivery",
             "description": "Sebastian Moore's Services Week talk introducing business relationship management in modern service delivery: framing the problem, the solution, and the value BRM brings to any organisation. Published on the UK Gov Design channel.",
             "uploadDate": "2026-02-02",
             "thumbnailUrl": "https://i.ytimg.com/vi/ZYBs5XGPF_c/hqdefault.jpg",
@@ -376,9 +392,9 @@
       background-image: radial-gradient(rgba(45,212,191,0.13) 1px, transparent 1px);
       background-size: 36px 36px; will-change: transform;
     }
-    .hero-float-wrap { position: absolute; right: 5%; top: 150px; z-index: 1; pointer-events: none; will-change: transform; }
+    .hero-float-wrap { position: absolute; right: 6%; top: 110px; z-index: 1; pointer-events: none; will-change: transform; }
     .hero-float {
-      width: 250px; height: 250px; border-radius: 50%; object-fit: cover; object-position: 50% 18%;
+      width: 340px; height: 340px; border-radius: 50%; object-fit: cover; object-position: 50% 18%;
       border: 3px solid rgba(45,212,191,0.55);
       box-shadow: 0 24px 60px rgba(0,0,0,0.45), 0 0 0 10px rgba(45,212,191,0.07);
       animation: floaty 10s ease-in-out infinite;
@@ -438,7 +454,20 @@
     /* stat band inside dark block */
     .stats { border-top: 1px solid rgba(238,243,249,0.14); }
     .stats .wrap-wide { display: grid; grid-template-columns: repeat(5, 1fr); }
-    .stat { padding: 38px 18px; text-align: center; }
+    .stat { padding: 38px 18px; text-align: center; position: relative; }
+    .stat[data-tip]::after {
+      content: attr(data-tip);
+      position: absolute; left: 50%; transform: translateX(-50%) translateY(6px); top: calc(100% - 16px);
+      width: 230px; padding: 10px 14px; border-radius: 4px;
+      background: #f4f6f9; color: #0f2337; font-size: 0.78rem; font-weight: 500; line-height: 1.5;
+      text-transform: none; letter-spacing: 0;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      opacity: 0; visibility: hidden; transition: opacity 0.2s ease, transform 0.2s ease;
+      pointer-events: none; z-index: 20;
+    }
+    .stat[data-tip]:hover::after, .stat[data-tip]:focus::after {
+      opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
+    }
     .stat + .stat { border-left: 1px solid rgba(238,243,249,0.14); }
     .stat .num {
       font-family: "Source Serif 4", Georgia, serif;
@@ -523,7 +552,10 @@
 
     /* experience */
     .xp { list-style: none; }
-    .xp li { padding: 24px 0; border-bottom: 1px solid var(--rule); }
+    .xp li { padding: 24px 0; border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: 92px 1fr; gap: 20px; align-items: start; }
+    .xp-logo { width: 92px; }
+    .xp-logo img { max-width: 92px; max-height: 60px; object-fit: contain; background: #fff; border-radius: 4px; padding: 4px; border: 1px solid var(--rule); }
+    @media (max-width: 560px) { .xp li { grid-template-columns: 1fr; } .xp-logo { display: none; } }
     .xp li:first-child { padding-top: 0; }
     .xp li:last-child { border-bottom: none; padding-bottom: 0; }
     .xp .role { font-family: "Source Serif 4", Georgia, serif; font-size: 1.18rem; font-weight: 600; line-height: 1.35; color: var(--navy); }
@@ -635,8 +667,15 @@
     .cred-hint { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue-deep); margin-top: 6px; }
     @media (prefers-color-scheme: dark) { .cred-hint { color: var(--blue); } }
     @media (prefers-color-scheme: dark) { .cred-card .cred-year { color: var(--blue); } }
-    .edu-list { list-style: none; margin-top: 8px; }
-    .edu-list li { padding: 11px 0; border-bottom: 1px solid var(--rule); font-size: 0.95rem; }
+    .edu-list { list-style: none; margin-top: 8px; margin-bottom: 34px; }
+    .edu-list li { padding: 11px 0; border-bottom: 1px solid var(--rule); font-size: 0.95rem; display: flex; align-items: center; gap: 16px; }
+    .edu-logo { width: 44px; height: 44px; object-fit: contain; flex-shrink: 0; background: #fff; border-radius: 4px; padding: 3px; border: 1px solid var(--rule); }
+    .edu-mono {
+      width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-family: "Source Serif 4", Georgia, serif; font-weight: 600; font-size: 1.2rem;
+      background: var(--bg-tint); border: 1px solid var(--rule); color: var(--navy);
+    }
     .edu-list li:last-child { border-bottom: none; }
     .edu-list .school { font-weight: 600; color: var(--ink); }
     .edu-list .detail { color: var(--ink-soft); }
@@ -719,6 +758,15 @@
     /* footer */
     footer { background: var(--navy-deep); padding: 48px 0 56px; }
     footer p { font-size: 0.8rem; color: rgba(238,243,249,0.8); line-height: 1.7; }
+    .foot-social { display: flex; gap: 14px; margin-bottom: 20px; }
+    .foot-social a {
+      width: 46px; height: 46px; border-radius: 50%;
+      border: 1px solid rgba(238,243,249,0.28);
+      display: inline-flex; align-items: center; justify-content: center;
+      color: #f4f1ec; text-decoration: none;
+      transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+    .foot-social a:hover, .foot-social a:focus-visible { border-color: #2dd4bf; color: #2dd4bf; transform: translateY(-2px); }
     footer .foot-links { margin-bottom: 16px; }
     footer .foot-links a { text-decoration: none; color: rgba(238,243,249,0.92); margin-right: 20px; font-weight: 600; font-size: 0.8rem; }
     footer .foot-links a:hover { color: #2dd4bf; }
@@ -771,11 +819,11 @@
 
   <div class="stats">
     <div class="wrap-wide">
-      <div class="stat"><div class="num"><span class="cnt" data-target="1250">1,250</span><span class="accent">+</span></div><div class="what">GOVBRM readers</div></div>
-      <div class="stat"><div class="num"><span class="cnt" data-target="2000">2,000</span><span class="accent">+</span></div><div class="what">Civil servants upskilled</div></div>
-      <div class="stat"><div class="num"><span class="cnt" data-target="5">5</span></div><div class="what">National &amp; global recognition lists</div></div>
-      <div class="stat"><div class="num"><span class="cnt" data-target="16">16</span><span class="accent">+</span></div><div class="what">Professional certifications</div></div>
-      <div class="stat"><div class="num"><span class="cnt" data-target="80">80</span><span class="accent">+</span></div><div class="what">Customised tools &amp; templates built</div></div>
+      <div class="stat" tabindex="0" data-tip="Subscribers and readers of my GOVBRM newsletter across UK government and internationally."><div class="num"><span class="cnt" data-target="1250">1,250</span><span class="accent">+</span></div><div class="what">GOVBRM readers</div></div>
+      <div class="stat" tabindex="0" data-tip="Civil servants reached through digital and AI upskilling sessions I designed and delivered across departments."><div class="num"><span class="cnt" data-target="2000">2,000</span><span class="accent">+</span></div><div class="what">Civil servants upskilled</div></div>
+      <div class="stat" tabindex="0" data-tip="Future CIO 100, AI 100 UK, Government AI 100, Global Top BRM and Digital Leader Top 100 UK."><div class="num"><span class="cnt" data-target="5">5</span></div><div class="what">National &amp; global recognition lists</div></div>
+      <div class="stat" tabindex="0" data-tip="Professional certification groups spanning AI, business relationship management, service management and leadership."><div class="num"><span class="cnt" data-target="16">16</span><span class="accent">+</span></div><div class="what">Professional certifications</div></div>
+      <div class="stat" tabindex="0" data-tip="Customised tools, templates and automations built across my workflow, ready to reuse from day one."><div class="num"><span class="cnt" data-target="80">80</span><span class="accent">+</span></div><div class="what">Customised tools &amp; templates built</div></div>
     </div>
   </div>
 </div>
@@ -784,7 +832,7 @@
 
   <section id="about">
     <div class="wrap-wide section-grid reveal">
-      <p class="label"><span class="num" aria-hidden="true">01</span>About</p>
+      <p class="label">About</p>
       <div class="prose">
         <h2 class="section-title">A connector at the centre of government technology.</h2>
         <p class="accent-phrase">Translation, done properly.</p>
@@ -805,7 +853,7 @@
 
   <section id="journey">
     <div class="wrap-wide section-grid reveal">
-      <p class="label"><span class="num" aria-hidden="true">02</span>The journey</p>
+      <p class="label">The journey</p>
       <div>
         <h2 class="section-title">From care in County Durham to the centre of government.</h2>
         <p class="accent-phrase">Potential is evenly distributed. Opportunity is not.</p>
@@ -823,27 +871,39 @@
 
   <section id="experience">
     <div class="wrap-wide section-grid reveal">
-      <p class="label"><span class="num" aria-hidden="true">03</span>Experience</p>
+      <p class="label">Experience</p>
       <ul class="xp">
         <li>
+          <div class="xp-logo"><img src="/assets/logos/hmt.png" alt="HM Treasury crest"></div>
+          <div>
           <p class="role">Senior Business Relationship Manager (Digital Business Partner)</p>
           <p class="org-line">HM Treasury &middot; 2024 to present</p>
           <p>Lead Business Relationship Manager for the Treasury's partner organisations. Directed the Treasury Innovation Day and Digital Excellence Series, led the HM Treasury Innovation Awards, steered NISTA's digital onboarding through Machinery of Government changes, and supported the M365 Copilot rollout across partner organisations. Departmental accessibility champion.</p>
+          </div>
         </li>
         <li>
+          <div class="xp-logo"><img src="/assets/logos/dsit.svg" alt="Department for Science, Innovation and Technology logo"></div>
+          <div>
           <p class="role">Assistant Private Secretary to the Group Chief Digital &amp; Information Officer</p>
           <p class="org-line">Department for Science, Innovation and Technology &middot; 2023 to 2024</p>
           <p>Managed the Group CDIO's strategic agenda across ministerial and Director General networks. Orchestrated the SCS Digital Excellence Programme for 500+ senior leaders and digital upskilling initiatives reaching over 2,000 staff.</p>
+          </div>
         </li>
         <li>
+          <div class="xp-logo"><img src="/assets/logos/dcms.svg" alt="Department for Culture, Media and Sport logo"></div>
+          <div>
           <p class="role">Executive Assistant to Deputy Directors</p>
           <p class="org-line">Department for Culture, Media and Sport &middot; 2023</p>
           <p>Ran the private office for two Deputy Directors across the Youth Services and Volunteering portfolios. Presented lived experience evidence to the cross-government ministerial board on care leavers and authored the policy case for including care leavers in Equality Impact Assessments.</p>
+          </div>
         </li>
         <li>
+          <div class="xp-logo"><img src="/assets/logos/hmt.png" alt="HM Treasury crest"></div>
+          <div>
           <p class="role">Correspondence &amp; Innovation Officer</p>
           <p class="org-line">HM Treasury &middot; 2022 to 2023</p>
           <p>Won the HM Treasury Professional Award for Innovation for implementing robotic process automation across ministerial correspondence workflows. The start of a career built on releasing human capacity for higher-value work.</p>
+          </div>
         </li>
       </ul>
     </div>
@@ -888,7 +948,7 @@
 
   <section id="events">
     <div class="wrap-wide section-grid reveal">
-      <p class="label"><span class="num" aria-hidden="true">04</span>Speaking</p>
+      <p class="label">Speaking</p>
       <div>
         <h2 class="section-title">Events &amp; appearances</h2>
         <p class="accent-phrase">In the room, and on the record.</p>
@@ -902,6 +962,13 @@
             <span class="tag">Free to attend</span>
           </div>
           <div class="event">
+            <p class="when">Autumn 2026 &middot; Date to be confirmed</p>
+            <h3><a href="https://aiweek.digileaders.com/">BRM &amp; AI at Digital Leaders AI Week</a></h3>
+            <p>Hosting a session on business relationship management and AI at Digital Leaders' AI Week, the ten-day online summit on making AI work. Session date and sign-up link to follow.</p>
+            <span class="tag">Session host &middot; Online</span>
+            <a class="tag" href="https://aiweek.digileaders.com/">AI Week sign-up</a>
+          </div>
+          <div class="event">
             <p class="when">19 November 2026</p>
             <h3><a href="https://brm.institute/events/#event=78277913;instance=20261119090000?popup=1&amp;lang=en-US">UK BRM Conference 2026</a></h3>
             <p>Delivering the closing presentation of the UK's national BRM gathering, hosted by the BRM Institute. A solo session, in person only: on building an online executive presence, what showing up visibly does for your personal and professional growth, and how visible practitioners promote and democratise BRM capability for the whole profession.</p>
@@ -913,7 +980,7 @@
           <p class="group-name">Past</p>
           <div class="event past">
             <p class="when">Services Week 2026</p>
-            <h3><a href="https://youtu.be/ZYBs5XGPF_c">The Orchestration Layer</a></h3>
+            <h3><a href="https://youtu.be/ZYBs5XGPF_c">The Orchestration Layer: BRM in Modern Service Delivery</a></h3>
             <p>An introduction to business relationship management in modern service delivery, given for the UK Government's cross-government Services Week and published on the UK Gov Design channel. The talk frames the problem organisations face as delivery grows more complex, sets out BRM as the solution, and makes the case for the value and impact the discipline brings to any organisation, and why it matters now.</p>
             <a class="tag" href="https://youtu.be/ZYBs5XGPF_c">Watch on YouTube</a>
           </div>
@@ -924,10 +991,10 @@
 
   <section id="recognition">
     <div class="wrap-wide section-grid reveal">
-      <p class="label"><span class="num" aria-hidden="true">05</span>Recognition</p>
+      <p class="label">Recognition</p>
       <ul class="rec-list">
         <li><span class="what">Future CIO 100 <span class="by">&middot; HotTopics</span></span><span class="year">2026</span></li>
-        <li><span class="what"><a href="https://brm.institute/2026-top-brms/">Global Top BRM</a> <span class="by">&middot; BRM Institute</span></span><span class="year">2026</span></li>
+        <li><span class="what">Global Top BRM <span class="by">&middot; BRM Institute</span></span><span class="year">2026</span></li>
         <li><span class="what">Judge <span class="by">&middot; UK IT Industry Awards</span></span><span class="year">2026</span></li>
         <li><span class="what">AI 100 UK <span class="by">&middot; Digital Leaders</span></span><span class="year">2025</span></li>
         <li><span class="what">Government AI 100 <span class="by">&middot; Apolitical</span></span><span class="year">2025</span></li>
@@ -942,7 +1009,7 @@
 
   <section id="research">
     <div class="wrap-wide section-grid reveal">
-      <p class="label"><span class="num" aria-hidden="true">06</span>Research</p>
+      <p class="label">Research</p>
       <div>
         <h2 class="section-title">Published research</h2>
         <p class="accent-phrase">Evidence, in the open.</p>
@@ -962,10 +1029,20 @@
 
   <section id="credentials">
     <div class="wrap-wide section-grid reveal">
-      <p class="label"><span class="num" aria-hidden="true">07</span>Credentials</p>
+      <p class="label">Credentials</p>
       <div>
         <h2 class="section-title">Certifications &amp; education</h2>
         <p class="accent-phrase">Proof, not promises.</p>
+        <p class="cred-cat">Education</p>
+        <ul class="edu-list">
+          <li><img class="edu-logo" src="/assets/logos/henley.svg" alt="" onerror="this.outerHTML='<span class=&quot;edu-mono&quot;>H</span>'"><span><span class="school">Henley Business School</span> <span class="detail">&middot; MSc Digital &amp; Technology Solutions, IT Strategy Specialist (2027, in progress)</span></span></li>
+          <li><img class="edu-logo" src="/assets/logos/oxford-said.svg" alt="" onerror="this.outerHTML='<span class=&quot;edu-mono&quot;>O</span>'"><span><span class="school">Sa&iuml;d Business School, University of Oxford</span> <span class="detail">&middot; AI and Digital Transformation in Government (2026)</span></span></li>
+          <li><img class="edu-logo" src="/assets/logos/durham.svg" alt="" onerror="this.outerHTML='<span class=&quot;edu-mono&quot;>D</span>'"><span><span class="school">Durham University</span> <span class="detail">&middot; Artificial Intelligence: Foundations for Practice and Research (2026)</span></span></li>
+          <li><img class="edu-logo" src="/assets/logos/york.svg" alt="" onerror="this.outerHTML='<span class=&quot;edu-mono&quot;>Y</span>'"><span><span class="school">University of York</span> <span class="detail">&middot; PGCert Innovation, Leadership &amp; Management (2025)</span></span></li>
+          <li><img class="edu-logo" src="/assets/logos/northumbria.svg" alt="" onerror="this.outerHTML='<span class=&quot;edu-mono&quot;>N</span>'"><span><span class="school">Northumbria University</span> <span class="detail">&middot; BA Hons International Relations &amp; Politics (2022)</span></span></li>
+        </ul>
+
+        <p class="cred-cat">Certifications</p>
         <p class="cred-intro">Credentials stack up the way I earn them: in growing portfolios. Hover over, or focus, a card to see everything inside it.</p>
 
         <div class="cred-grid">
@@ -1176,15 +1253,6 @@
           </div>
         </div>
 
-        <p class="cred-cat">Education</p>
-        <ul class="edu-list">
-          <li><span class="school">Henley Business School</span> <span class="detail">&middot; MSc Digital &amp; Technology Solutions, IT Strategy Specialist (2027, in progress)</span></li>
-          <li><span class="school">Sa&iuml;d Business School, University of Oxford</span> <span class="detail">&middot; AI and Digital Transformation in Government (2026)</span></li>
-          <li><span class="school">Durham University</span> <span class="detail">&middot; Artificial Intelligence: Foundations for Practice and Research (2026)</span></li>
-          <li><span class="school">University of York</span> <span class="detail">&middot; PGCert Innovation, Leadership &amp; Management (2025)</span></li>
-          <li><span class="school">Northumbria University</span> <span class="detail">&middot; BA Hons International Relations &amp; Politics (2022)</span></li>
-        </ul>
-
         <p class="cred-cat">Digital badges</p>
         <div class="badges-row">
           <img src="/assets/badges/future-cio-100.png" alt="HotTopics Future CIO 100 2026 Winner badge" onerror="this.remove()">
@@ -1208,7 +1276,7 @@
   <section class="recs" id="recommendations" aria-label="Recommendations from LinkedIn">
     <div class="recs-head">
       <div>
-        <p class="label"><span class="num" aria-hidden="true">08</span>What leaders say</p>
+        <p class="label">What leaders say</p>
         <h2>Recommended across government.</h2>
       </div>
       <button class="marquee-toggle" id="marqueeToggle" aria-pressed="false">Pause motion</button>
@@ -1366,7 +1434,7 @@
 
   <section id="writing">
     <div class="wrap-wide section-grid reveal">
-      <p class="label"><span class="num" aria-hidden="true">09</span>Selected writing</p>
+      <p class="label">Selected writing</p>
       <div>
         <article class="feature">
           <p class="where">GOVBRM &middot; Biweekly newsletter &middot; 1,250+ readers</p>
@@ -1385,7 +1453,7 @@
         </article>
         <article class="feature">
           <p class="where">BRM Institute &middot; August 2025</p>
-          <h3>Versatile by Design: BRM in UK Government</h3>
+          <h3><a href="https://brm.institute/versatile-by-design-brm-uk-government/">Versatile by Design: BRM in UK Government</a></h3>
           <p>On why business relationship management is the connective tissue of government digital delivery.</p>
         </article>
         <article class="feature">
@@ -1405,7 +1473,7 @@
 
   <section id="contact">
     <div class="wrap-wide section-grid reveal">
-      <p class="label"><span class="num" aria-hidden="true">10</span>Contact</p>
+      <p class="label">Contact</p>
       <div>
         <p class="contact-line">If you work in government digital, BRM or AI transformation, or you would like me to speak at your event, I would like to hear from you.</p>
         <div class="contact-socials">
@@ -1424,13 +1492,13 @@
 
 <footer>
   <div class="wrap-wide">
-    <p class="foot-links">
-      <a href="https://www.linkedin.com/in/sebx">LinkedIn</a>
-      <a href="https://x.com/sebxmoore">X</a>
-      <a href="https://www.instagram.com/sebxmoore/">Instagram</a>
-      <a href="https://www.tiktok.com/@sebxmoore">TikTok</a>
-      <a href="/publications.html">Writing &amp; press</a>
-    </p>
+    <div class="foot-social">
+      <a href="https://x.com/sebxmoore" aria-label="Sebastian Moore on X"><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="https://www.linkedin.com/in/sebx" aria-label="Sebastian Moore on LinkedIn"><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 110-4.124 2.062 2.062 0 010 4.124zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      <a href="https://www.instagram.com/sebxmoore/" aria-label="Sebastian Moore on Instagram"><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+      <a href="https://www.tiktok.com/@sebxmoore" aria-label="Sebastian Moore on TikTok"><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+      <a href="https://youtu.be/ZYBs5XGPF_c" aria-label="Watch Sebastian Moore on YouTube"><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+    </div>
     <p>&copy; 2026 Sebastian Moore. This is a personal website; all views are my own and do not represent any employer.</p>
   </div>
 </footer>
