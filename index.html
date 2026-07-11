@@ -392,7 +392,7 @@
       background-image: radial-gradient(rgba(45,212,191,0.13) 1px, transparent 1px);
       background-size: 36px 36px; will-change: transform;
     }
-    .hero-float-wrap { position: absolute; right: 6%; top: 110px; z-index: 1; pointer-events: none; will-change: transform; }
+    .hero-float-wrap { position: absolute; right: 6%; top: 205px; z-index: 1; pointer-events: none; will-change: transform; }
     .hero-float {
       width: 340px; height: 340px; border-radius: 50%; object-fit: cover; object-position: 50% 18%;
       border: 3px solid rgba(45,212,191,0.55);
@@ -554,7 +554,14 @@
     .xp { list-style: none; }
     .xp li { padding: 24px 0; border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: 92px 1fr; gap: 20px; align-items: start; }
     .xp-logo { width: 92px; }
-    .xp-logo img { max-width: 92px; max-height: 60px; object-fit: contain; background: #fff; border-radius: 4px; padding: 4px; border: 1px solid var(--rule); }
+    .xp-logo img { max-width: 92px; max-height: 64px; object-fit: contain; }
+    .logo-dark { display: none; }
+    @media (prefers-color-scheme: dark) {
+      .logo-light { display: none; }
+      .logo-dark { display: inline; }
+      .mono-invert { filter: brightness(0) invert(1); opacity: 0.92; }
+      .edu-logo { background: #eef3f9; border-radius: 4px; padding: 3px; }
+    }
     @media (max-width: 560px) { .xp li { grid-template-columns: 1fr; } .xp-logo { display: none; } }
     .xp li:first-child { padding-top: 0; }
     .xp li:last-child { border-bottom: none; padding-bottom: 0; }
@@ -669,7 +676,7 @@
     @media (prefers-color-scheme: dark) { .cred-card .cred-year { color: var(--blue); } }
     .edu-list { list-style: none; margin-top: 8px; margin-bottom: 34px; }
     .edu-list li { padding: 11px 0; border-bottom: 1px solid var(--rule); font-size: 0.95rem; display: flex; align-items: center; gap: 16px; }
-    .edu-logo { width: 44px; height: 44px; object-fit: contain; flex-shrink: 0; background: #fff; border-radius: 4px; padding: 3px; border: 1px solid var(--rule); }
+    .edu-logo { width: 44px; height: 44px; object-fit: contain; flex-shrink: 0; }
     .edu-mono {
       width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
       display: inline-flex; align-items: center; justify-content: center;
@@ -874,7 +881,7 @@
       <p class="label">Experience</p>
       <ul class="xp">
         <li>
-          <div class="xp-logo"><img src="/assets/logos/hmt.png" alt="HM Treasury crest"></div>
+          <div class="xp-logo"><img class="logo-light" src="/assets/logos/hmt.png" alt="HM Treasury Lesser Arms crest"><img class="logo-dark" src="/assets/logos/hmt-white.png" alt="HM Treasury Lesser Arms crest"></div>
           <div>
           <p class="role">Senior Business Relationship Manager (Digital Business Partner)</p>
           <p class="org-line">HM Treasury &middot; 2024 to present</p>
@@ -882,7 +889,7 @@
           </div>
         </li>
         <li>
-          <div class="xp-logo"><img src="/assets/logos/dsit.svg" alt="Department for Science, Innovation and Technology logo"></div>
+          <div class="xp-logo"><img class="mono-invert" src="/assets/logos/dsit.svg" alt="Department for Science, Innovation and Technology logo"></div>
           <div>
           <p class="role">Assistant Private Secretary to the Group Chief Digital &amp; Information Officer</p>
           <p class="org-line">Department for Science, Innovation and Technology &middot; 2023 to 2024</p>
@@ -890,7 +897,7 @@
           </div>
         </li>
         <li>
-          <div class="xp-logo"><img src="/assets/logos/dcms.svg" alt="Department for Culture, Media and Sport logo"></div>
+          <div class="xp-logo"><img class="mono-invert" src="/assets/logos/dcms.svg" alt="Department for Culture, Media and Sport logo"></div>
           <div>
           <p class="role">Executive Assistant to Deputy Directors</p>
           <p class="org-line">Department for Culture, Media and Sport &middot; 2023</p>
@@ -898,7 +905,7 @@
           </div>
         </li>
         <li>
-          <div class="xp-logo"><img src="/assets/logos/hmt.png" alt="HM Treasury crest"></div>
+          <div class="xp-logo"><img class="logo-light" src="/assets/logos/hmt.png" alt="HM Treasury Lesser Arms crest"><img class="logo-dark" src="/assets/logos/hmt-white.png" alt="HM Treasury Lesser Arms crest"></div>
           <div>
           <p class="role">Correspondence &amp; Innovation Officer</p>
           <p class="org-line">HM Treasury &middot; 2022 to 2023</p>
@@ -1038,7 +1045,7 @@
           <li><img class="edu-logo" src="/assets/logos/henley.svg" alt="" onerror="this.outerHTML='<span class=&quot;edu-mono&quot;>H</span>'"><span><span class="school">Henley Business School</span> <span class="detail">&middot; MSc Digital &amp; Technology Solutions, IT Strategy Specialist (2027, in progress)</span></span></li>
           <li><img class="edu-logo" src="/assets/logos/oxford-said.svg" alt="" onerror="this.outerHTML='<span class=&quot;edu-mono&quot;>O</span>'"><span><span class="school">Sa&iuml;d Business School, University of Oxford</span> <span class="detail">&middot; AI and Digital Transformation in Government (2026)</span></span></li>
           <li><img class="edu-logo" src="/assets/logos/durham.svg" alt="" onerror="this.outerHTML='<span class=&quot;edu-mono&quot;>D</span>'"><span><span class="school">Durham University</span> <span class="detail">&middot; Artificial Intelligence: Foundations for Practice and Research (2026)</span></span></li>
-          <li><img class="edu-logo" src="/assets/logos/york.svg" alt="" onerror="this.outerHTML='<span class=&quot;edu-mono&quot;>Y</span>'"><span><span class="school">University of York</span> <span class="detail">&middot; PGCert Innovation, Leadership &amp; Management (2025)</span></span></li>
+          <li><img class="edu-logo" src="/assets/logos/york.png" alt="" onerror="this.outerHTML='<span class=&quot;edu-mono&quot;>Y</span>'"><span><span class="school">University of York</span> <span class="detail">&middot; PGCert Innovation, Leadership &amp; Management (2025)</span></span></li>
           <li><img class="edu-logo" src="/assets/logos/northumbria.svg" alt="" onerror="this.outerHTML='<span class=&quot;edu-mono&quot;>N</span>'"><span><span class="school">Northumbria University</span> <span class="detail">&middot; BA Hons International Relations &amp; Politics (2022)</span></span></li>
         </ul>
 
@@ -1443,7 +1450,7 @@
         </article>
         <article class="feature">
           <p class="where">Apolitical &middot; November 2025</p>
-          <h3>HM Treasury's Innovation Day 2025: Highlights</h3>
+          <h3><a href="https://apolitical.co/en/articles/highlights-celebrating-digital-excellence-across-treasury-665">HM Treasury's Innovation Day 2025: Highlights</a></h3>
           <p>What happened when the Treasury opened its doors to cross-government and industry innovation.</p>
         </article>
         <article class="feature">
