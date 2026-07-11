@@ -91,8 +91,13 @@
         { "@type": "EducationalOccupationalCredential", "name": "CBRM Certificate of Experience: Change Management, BRM Institute (2026)" },
         { "@type": "EducationalOccupationalCredential", "name": "Business Relationship Management Professional (BRMP), BRM Institute / APMG International (2025), with Certificates of Experience" },
         { "@type": "EducationalOccupationalCredential", "name": "The High Performing BRM Designation, Barkley Consulting Group (2024)" },
-        { "@type": "EducationalOccupationalCredential", "name": "ITIL 4 Specialist: Business Relationship Management, PeopleCert" },
-        { "@type": "EducationalOccupationalCredential", "name": "ITIL 4 Foundation Certificate in IT Service Management, PeopleCert" },
+        { "@type": "EducationalOccupationalCredential", "name": "ITIL 5 Foundation via Bridge examination, PeopleCert (2026)" },
+        { "@type": "EducationalOccupationalCredential", "name": "ITIL 4 Specialist: Business Relationship Management, PeopleCert (2025)" },
+        { "@type": "EducationalOccupationalCredential", "name": "BRMP Certificate of Experience: Strategy, BRM Institute (February 2026)" },
+        { "@type": "EducationalOccupationalCredential", "name": "BRMP Certificate of Experience: Strategy, BRM Institute (May 2026)" },
+        { "@type": "EducationalOccupationalCredential", "name": "High Performing BRM Refresher Workshop, Barkley Consulting Group (June 2026)" },
+        { "@type": "EducationalOccupationalCredential", "name": "First Aid at Work, British Red Cross (2022, valid to 2028)" },
+        { "@type": "EducationalOccupationalCredential", "name": "ITIL 4 Foundation Certificate in IT Service Management, PeopleCert (2025)" },
         { "@type": "EducationalOccupationalCredential", "name": "IT Management & Leadership Professional (ITMLP), IT Management and Leadership Institute (2025)" },
         { "@type": "EducationalOccupationalCredential", "name": "Lean Six Sigma Black Belt, Six Sigma Society (2025)" },
         { "@type": "EducationalOccupationalCredential", "name": "Practical Application of Gen AI for Project Managers, Generative AI Overview for Project Managers and Introduction to CPMAI, Project Management Institute (2025)" },
@@ -368,6 +373,25 @@
     .prose { color: var(--ink-soft); }
     .prose strong { color: var(--ink); font-weight: 600; }
 
+    .speaker-card {
+      border: 1px solid var(--rule); border-left: 3px solid var(--blue);
+      background: var(--bg-tint); padding: 26px 30px; margin-top: 30px; clear: both;
+    }
+    .speaker-card .sk-label {
+      font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700;
+      color: var(--ink-faint); margin-bottom: 12px;
+    }
+    .speaker-card .sk-copy { font-family: "Source Serif 4", Georgia, serif; font-size: 1.02rem; color: var(--ink); }
+    .btn-message {
+      display: inline-block; margin-top: 18px;
+      font-size: 0.8rem; font-weight: 700; text-decoration: none;
+      background: var(--blue-deep); color: #fff; border-radius: 2px; padding: 12px 22px;
+    }
+    .btn-message:hover { background: var(--navy-deep); color: #fff; }
+    @media (prefers-color-scheme: dark) {
+      .btn-message { color: #04141f; }
+      .btn-message:hover { background: #2dd4bf; color: #04141f; }
+    }
     .portrait {
       float: right; width: 168px; height: 210px; object-fit: cover;
       margin: 4px 0 18px 28px;
@@ -435,6 +459,7 @@
     }
     @media (prefers-color-scheme: dark) { .event .tag { color: var(--blue); } }
     a.tag:hover { background: var(--blue-deep); border-color: var(--blue-deep); color: #fff; }
+    @media (prefers-color-scheme: dark) { a.tag:hover { color: #04141f; } }
     .event.past { border-left-color: var(--rule); background: var(--bg-tint); }
     .event.past .when { color: var(--ink-faint); }
 
@@ -572,6 +597,10 @@
     .contact-socials a:hover { border-color: var(--blue); color: var(--blue); }
     .contact-socials a.primary { background: var(--blue-deep); border-color: var(--blue-deep); color: #fff; }
     .contact-socials a.primary:hover { background: var(--navy-deep); border-color: var(--navy-deep); color: #fff; }
+    @media (prefers-color-scheme: dark) {
+      .contact-socials a.primary { color: #04141f; }
+      .contact-socials a.primary:hover { background: #2dd4bf; border-color: #2dd4bf; color: #04141f; }
+    }
 
     /* footer */
     footer { background: var(--navy-deep); padding: 48px 0 56px; }
@@ -644,6 +673,11 @@
         <p>The route here was not typical. I grew up in care in County Durham, and joined the Treasury's new Darlington Economic Campus through the Civil Service Care Leaver Internship Scheme two days after graduating. Since then I have been named in HotTopics' <strong>Future CIO 100</strong>, the <strong>AI 100 UK</strong> by Digital Leaders, Apolitical's <strong>Government AI 100</strong>, and recognised as a <strong>Global Top BRM</strong> by the BRM Institute. I also judge the <strong>UK IT Industry Awards</strong>.</p>
         <p>That background is not a footnote to the technology work. Growing up inside systems designed around you, rather than with you, teaches you exactly what to look for when governments start automating decisions. It is why I chair the <strong>Civil Service Care-Experienced Network</strong>, why I publish research on social mobility policy, and why accessibility runs through everything I do professionally.</p>
         <p>I write <a href="/publications.html">GOVBRM</a>, a biweekly newsletter on aligning public sector priorities with digital delivery, read by over 1,250 practitioners in the UK and internationally, and I am a Professional Member of BCS, The Chartered Institute for IT.</p>
+        <div class="speaker-card">
+          <p class="sk-label">Speaker bio</p>
+          <p class="sk-copy">Sebastian Moore is a Senior Business Relationship Manager at HM Treasury and one of the UK's recognised voices in AI governance and digital strategy. Named in HotTopics' Future CIO 100, the AI 100 UK by Digital Leaders and Apolitical's Government AI 100, and recognised as a Global Top BRM by the BRM Institute, he works at the seam where government ambition meets delivery. He writes GOVBRM, a newsletter read by more than 1,250 practitioners worldwide, publishes research on social mobility policy, and chairs the Civil Service Care-Experienced Network. A care leaver from County Durham, he speaks on responsible AI adoption, business relationship management, and the systems that shape organisations and lives, bringing evidence, candour and lived experience to every stage.</p>
+          <a class="btn-message" href="https://www.linkedin.com/messaging/compose/?recipient=sebx">Request a speaking slot &middot; Message me on LinkedIn</a>
+        </div>
       </div>
     </div>
   </section>
@@ -777,7 +811,7 @@
         <div class="cred-grid">
           <div class="cred-card" tabindex="0">
             <span class="cred-issuer">Mastermind Assurance</span>
-            <span class="cred-name">ISO/IEC Standards Portfolio</span>
+            <span class="cred-name">ISO/IEC Lead Auditor: Information Security &amp; AI Management Systems</span>
             <span class="cred-what">Lead auditor qualifications in the international standards for governing AI and securing information.</span>
             <span class="cred-year">2025 &ndash; 2026</span>
             <ul class="cred-sub">
@@ -796,9 +830,11 @@
               <li>Microsoft Certified: AI Transformation Leader</li>
               <li>Microsoft Certified: AI Business Professional</li>
               <li>Microsoft 365 Certified: Copilot &amp; Agent Administration Fundamentals</li>
-              <li>Further Microsoft exams (AB-900, AB-730, AB-731, SC-730, MS-700)</li>
+              <li>Microsoft Certified: Cybersecurity Business Professional (SC-730)</li>
+              <li>Managing Microsoft Teams (MS-700)</li>
+              <li>Further Microsoft exams (AB-900, AB-730, AB-731)</li>
             </ul>
-            <span class="cred-hint">5+ credentials &middot; hover for the list</span>
+            <span class="cred-hint">6+ credentials &middot; hover for the list</span>
           </div>
           <div class="cred-card" tabindex="0">
             <span class="cred-issuer">BRM Institute &middot; APMG International</span>
@@ -808,27 +844,36 @@
             <ul class="cred-sub">
               <li>Certified Business Relationship Manager, CBRM (2025)</li>
               <li>Business Relationship Management Professional, BRMP (2025)</li>
-              <li>CBRM Certificate of Experience: IT / Strategy (2026)</li>
-              <li>CBRM Certificate of Experience: Change Management (2026)</li>
+              <li>CBRM Certificate of Experience: IT / Strategy (March 2026)</li>
+              <li>CBRM Certificate of Experience: Change Management (April 2026)</li>
+              <li>BRMP Certificate of Experience: Strategy (February 2026)</li>
+              <li>BRMP Certificate of Experience: Strategy (May 2026)</li>
             </ul>
-            <span class="cred-hint">4 credentials &middot; hover for the list</span>
+            <span class="cred-hint">6 credentials &middot; hover for the list</span>
           </div>
           <div class="cred-card" tabindex="0">
             <span class="cred-issuer">Barkley Consulting Group</span>
             <span class="cred-name">The High Performing BRM Designation</span>
             <span class="cred-what">Top BRM Performer: recognition of sustained high performance in the BRM role.</span>
-            <span class="cred-year">2024</span>
+            <span class="cred-year">2024 &middot; renewed 2026</span>
+            <ul class="cred-sub">
+              <li>The High Performing BRM Designation (November 2024)</li>
+              <li>High Performing BRM Refresher Workshop (June 2026)</li>
+            </ul>
+            <span class="cred-hint">2 credentials &middot; hover for the list</span>
           </div>
           <div class="cred-card" tabindex="0">
             <span class="cred-issuer">PeopleCert</span>
-            <span class="cred-name">ITIL 4 Portfolio</span>
-            <span class="cred-what">The global standard for IT service management.</span>
-            <span class="cred-year">2025</span>
+            <span class="cred-name">ITIL Portfolio</span>
+            <span class="cred-what">The global standard for IT service management: ITIL 5 Foundation certified via the bridge examination.</span>
+            <span class="cred-year">2025 &ndash; 2026</span>
             <ul class="cred-sub">
+              <li>ITIL 5 Foundation, via the Bridge examination (2026)</li>
               <li>ITIL 4 Specialist: Business Relationship Management (2025)</li>
-              <li>ITIL 4 Foundation</li>
+              <li>ITIL 4 Foundation (2025)</li>
+              <li>ITIL: AI Governance Unlocked</li>
             </ul>
-            <span class="cred-hint">2 credentials &middot; hover for the list</span>
+            <span class="cred-hint">4 credentials &middot; hover for the list</span>
           </div>
           <div class="cred-card" tabindex="0">
             <span class="cred-issuer">Anthropic</span>
@@ -912,8 +957,21 @@
           <div class="cred-card" tabindex="0">
             <span class="cred-issuer">Apolitical</span>
             <span class="cred-name">Digital Excellence Programme+</span>
-            <span class="cred-what">Building digital, data and user-centred culture in government, across ten modules.</span>
+            <span class="cred-what">The full SCS Digital Excellence Programme, completed across ten modules with partners including LSE, EY, Stanford Online and Google.</span>
             <span class="cred-year">2025</span>
+            <ul class="cred-sub">
+              <li>Building a Digital Culture in Government</li>
+              <li>Building a User-Centred Culture in Government</li>
+              <li>Building a Data Culture in Government</li>
+              <li>Building AI Confidence in Government</li>
+              <li>AI Fundamentals for Public Servants: Opportunities, Risks and Strategies</li>
+              <li>AI Leadership in Government: Building Trust, Skills and an Innovative Culture</li>
+              <li>Leadership, Innovation and Culture Change: Global Lessons in AI for Civil Service Leaders</li>
+              <li>Understand How AI Impacts You and Your Government</li>
+              <li>Quantum Computing: Understanding the Technology and its Implications</li>
+              <li>Neurodiversity in Public Service</li>
+            </ul>
+            <span class="cred-hint">10 modules &middot; hover for the list</span>
           </div>
           <div class="cred-card" tabindex="0">
             <span class="cred-issuer">Oracle</span>
@@ -931,6 +989,12 @@
             <span class="cred-name">AGI Strategy Programme</span>
             <span class="cred-what">Advanced programme on strategy for transformative AI.</span>
             <span class="cred-year">In progress</span>
+          </div>
+          <div class="cred-card" tabindex="0">
+            <span class="cred-issuer">British Red Cross</span>
+            <span class="cred-name">First Aid at Work</span>
+            <span class="cred-what">Because not every incident is digital.</span>
+            <span class="cred-year">2022 &ndash; 2028</span>
           </div>
         </div>
 
@@ -955,7 +1019,7 @@
           <img src="/assets/badges/itil4-specialist-brm.png" alt="ITIL 4 Specialist Business Relationship Management badge, PeopleCert" onerror="this.remove()">
           <img src="/assets/badges/lean-six-sigma-black-belt.webp" alt="Lean Six Sigma Black Belt badge, Six Sigma Society" onerror="this.remove()">
           <img src="/assets/badges/mckinsey-forward.png" alt="McKinsey Forward Program badge, McKinsey.org" onerror="this.remove()">
-          <img src="/assets/badges/itmlp.png" alt="IT Management and Leadership Professional badge" onerror="this.remove()">
+          <img src="/assets/badges/itmlp.svg" alt="ITMLP Certified IT Manager badge, IT Management and Leadership Institute" onerror="this.remove()">
           <img src="/assets/badges/microsoft-ai-transformation-leader.png" alt="Microsoft Certified AI Transformation Leader badge" onerror="this.remove()">
         </div>
       </div>

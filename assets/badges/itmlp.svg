@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 391" role="img" aria-label="ITMLP Certified IT Manager, IT Management and Leadership Institute">
+  <rect x="0" y="0" width="1200" height="391" fill="#ffffff"/>
+  <rect x="14" y="14" width="1172" height="363" fill="#4b5f7d"/>
+  <rect x="14" y="14" width="200" height="270" fill="#ffffff"/>
+  <text x="42" y="220" font-family="Arial, Helvetica, sans-serif" font-weight="bold" font-size="150" fill="#4b5f7d" stroke="#3c4d66" stroke-width="4">IT</text>
+  <text x="230" y="220" font-family="Arial, Helvetica, sans-serif" font-weight="bold" font-size="170" fill="#ffffff">MLP</text>
+  <text x="705" y="110" font-family="Arial, Helvetica, sans-serif" font-weight="bold" font-size="52" fill="#ffffff">&#174;</text>
+  <text x="770" y="140" font-family="Arial, Helvetica, sans-serif" font-style="italic" font-weight="bold" font-size="64" fill="#ffffff">Certified IT</text>
+  <text x="770" y="230" font-family="Arial, Helvetica, sans-serif" font-style="italic" font-weight="bold" font-size="64" fill="#ffffff">Manager</text>
+  <rect x="14" y="284" width="1172" height="93" fill="#ffffff"/>
+  <text x="600" y="352" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-style="italic" font-weight="bold" font-size="58" fill="#4b5f7d">IT Management and Leadership Institute</text>
+  <rect x="14" y="14" width="1172" height="363" fill="none" stroke="#4b5f7d" stroke-width="6"/>
+</svg>
