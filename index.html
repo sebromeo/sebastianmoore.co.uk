@@ -103,7 +103,7 @@
         { "@type": "EducationalOccupationalCredential", "name": "Practical Application of Gen AI for Project Managers, Generative AI Overview for Project Managers and Introduction to CPMAI, Project Management Institute (2025)" },
         { "@type": "EducationalOccupationalCredential", "name": "Cloud GreenOps for AI, Cloud GreenOps Philosopher and Cloud Sustainability Fundamentals, Greenpixie (2025-2026)" },
         { "@type": "EducationalOccupationalCredential", "name": "Digital Excellence Programme+, Apolitical, including Building Digital, Data and User-Centred Culture in Government (2025)" },
-        { "@type": "EducationalOccupationalCredential", "name": "ServiceNow IT Leadership Professional Certificate" },
+        { "@type": "EducationalOccupationalCredential", "name": "ServiceNow IT Leadership Professional Certificate (2024)" },
         { "@type": "EducationalOccupationalCredential", "name": "Oracle Cloud Infrastructure Certified AI Foundations Associate (2025)" }
       ],
       "award": [
@@ -150,13 +150,38 @@
         "AI governance and digital strategy",
         "Business relationship management in government",
         "Artificial intelligence adoption in the public sector",
+        "AI strategy and transformation",
+        "Digital business strategy",
         "Digital transformation and technology change",
         "Responsible AI",
+        "AI ethics",
+        "Applied AI",
         "M365 and Copilot deployment in government",
+        "Governance, risk management and compliance",
+        "Cybersecurity",
+        "Cloud computing",
+        "IT service management",
+        "Public sector IT",
+        "Technology adoption",
+        "Government digital and data",
+        "Stakeholder engagement and leadership",
+        "Influential communications",
+        "Team leadership",
+        "Creativity and innovation",
+        "Organisational change and digital transformation",
+        "Change management",
+        "Data analysis",
+        "User experience",
+        "Lean process improvement",
+        "Business analysis",
+        "Digital innovation",
+        "Environmental, social and governance",
+        "Public policy",
         "Cross-government collaboration",
         "Care-experienced representation and social mobility in the civil service",
         "Apprenticeship and further education funding policy",
-        "Accessibility and inclusive technology (WCAG)"
+        "Accessibility and inclusive technology (WCAG)",
+        "Diversity and inclusion"
       ],
       "sameAs": [
         "https://www.linkedin.com/in/sebx",
@@ -337,11 +362,13 @@
     .mask.d2 .mask-inner { animation-delay: 0.15s; }
     .mask.d3 .mask-inner { animation-delay: 0.3s; }
     @keyframes maskup { to { transform: none; } }
-    @media (prefers-reduced-motion: reduce) { .mask .mask-inner { transform: none; animation: none; } }
+    @media (prefers-reduced-motion: reduce) {
+      .mask .mask-inner { transform: none; opacity: 0; animation: maskfade 0.8s ease forwards; }
+    }
+    @keyframes maskfade { to { opacity: 1; } }
 
     .accent-phrase .w { opacity: 0.28; transition: opacity 0.3s linear; }
     .accent-phrase .w.lit { opacity: 1; }
-    @media (prefers-reduced-motion: reduce) { .accent-phrase .w { opacity: 1; } }
 
     .timeline .spine {
       position: absolute; left: 7px; top: 6px; width: 2px; height: 0;
@@ -349,11 +376,10 @@
     }
     .timeline li::before { border-color: var(--rule); transition: border-color 0.4s ease; }
     .timeline li.lit::before { border-color: var(--blue); }
-    @media (prefers-reduced-motion: reduce) { .timeline li::before { border-color: var(--blue); } .timeline .spine { display: none; } }
 
     .stag { opacity: 0; transform: translateY(14px); transition: opacity 0.55s ease, transform 0.55s ease; }
     .stag.in { opacity: 1; transform: none; }
-    @media (prefers-reduced-motion: reduce) { .stag { opacity: 1; transform: none; transition: none; } }
+    @media (prefers-reduced-motion: reduce) { .stag { transform: none; transition: opacity 0.55s ease; } }
     .hero .kicker {
       font-size: 0.76rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #2dd4bf;
       margin-bottom: 24px;
@@ -471,6 +497,21 @@
     @media (prefers-color-scheme: dark) { .xp .org-line { color: var(--blue); } }
     .xp p { color: var(--ink-soft); font-size: 0.95rem; }
 
+    /* skills word cloud */
+    .skills-band { background: var(--navy-deep); padding: 68px 0; }
+    .cloud-label {
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
+      color: rgba(238,243,249,0.6); text-align: center; margin-bottom: 30px;
+    }
+    .cloud-label::after { content: ""; display: block; width: 34px; height: 3px; background: #2dd4bf; margin: 12px auto 0; }
+    .cloud { display: flex; flex-wrap: wrap; gap: 12px 26px; justify-content: center; align-items: baseline; max-width: 920px; margin: 0 auto; text-align: center; }
+    .cloud span { transition: transform 0.2s ease, color 0.2s ease, opacity 0.2s ease; cursor: default; }
+    .cloud span:hover { transform: scale(1.1); }
+    .cloud .s1 { font-family: "Source Serif 4", Georgia, serif; font-style: italic; font-weight: 600; font-size: 1.55rem; color: #2dd4bf; }
+    .cloud .s2 { font-size: 0.98rem; font-weight: 600; color: #eef3f9; }
+    .cloud .s3 { font-size: 0.74rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(238,243,249,0.55); }
+    .cloud .s3:hover { color: rgba(238,243,249,0.9); }
+
     /* events */
     .event-group { margin-bottom: 34px; }
     .event-group:last-child { margin-bottom: 0; }
@@ -568,7 +609,8 @@
 
     /* badges */
     .badges-row { display: flex; flex-wrap: wrap; gap: 22px; align-items: center; margin-top: 16px; }
-    .badges-row img { height: 82px; width: auto; }
+    .badges-row img { height: 82px; width: auto; transition: transform 0.25s ease; }
+    .badges-row img:hover, .badges-row img:focus-visible { transform: scale(1.18); }
 
     /* recommendations marquee */
     .recs { overflow: hidden; padding: 84px 0; background: var(--bg-tint); }
@@ -582,7 +624,7 @@
     .marquee-toggle:hover { border-color: var(--blue); color: var(--blue); }
     .marquee-viewport { overflow-x: auto; scrollbar-width: thin; scrollbar-color: var(--blue) transparent; }
     .marquee { display: flex; gap: 26px; width: max-content; padding: 0 14px 16px; }
-    @media (prefers-reduced-motion: reduce) { .marquee { flex-wrap: wrap; width: auto; } .marquee-toggle { display: none; } }
+    @media (prefers-reduced-motion: reduce) { .marquee-toggle { display: none; } }
     .rec-card {
       width: 470px; max-width: 84vw; flex-shrink: 0;
       background: var(--bg); border: 1px solid var(--rule); border-top: 3px solid var(--blue);
@@ -650,7 +692,7 @@
     /* reveal */
     .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .reveal.in { opacity: 1; transform: none; }
-    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+    @media (prefers-reduced-motion: reduce) { .reveal { transform: none; transition: opacity 0.6s ease; } }
   </style>
 </head>
 <body>
@@ -768,6 +810,43 @@
     </div>
   </section>
 
+  <section class="skills-band" aria-label="Skills">
+    <div class="wrap-wide reveal">
+      <p class="cloud-label">What I work with</p>
+      <div class="cloud">
+        <span class="s1">Business Relationship Management</span>
+        <span class="s2">Stakeholder Engagement &amp; Leadership</span>
+        <span class="s3">Data Analysis</span>
+        <span class="s1">AI Governance</span>
+        <span class="s3">User Experience</span>
+        <span class="s2">Technology Adoption</span>
+        <span class="s3">Cybersecurity</span>
+        <span class="s1">AI Strategy &amp; Transformation</span>
+        <span class="s2">Government Digital &amp; Data</span>
+        <span class="s3">Cloud Computing</span>
+        <span class="s2">Team Leadership</span>
+        <span class="s3">IT Service Management</span>
+        <span class="s1">Digital Business Strategy</span>
+        <span class="s3">Lean Process Improvement</span>
+        <span class="s2">Creativity &amp; Innovation</span>
+        <span class="s3">Public Sector IT</span>
+        <span class="s2">Organisational Change</span>
+        <span class="s3">Environmental, Social &amp; Governance</span>
+        <span class="s1">Digital Transformation</span>
+        <span class="s3">Business Analysis</span>
+        <span class="s2">Influential Communications</span>
+        <span class="s3">Digital Innovation</span>
+        <span class="s2">Applied AI</span>
+        <span class="s3">Public Policy</span>
+        <span class="s2">Governance, Risk &amp; Compliance</span>
+        <span class="s3">AI Ethics</span>
+        <span class="s1">Responsible AI</span>
+        <span class="s3">Diversity &amp; Inclusion</span>
+        <span class="s2">Change Management</span>
+      </div>
+    </div>
+  </section>
+
   <section id="events">
     <div class="wrap-wide section-grid reveal">
       <p class="label"><span class="num" aria-hidden="true">04</span>Speaking</p>
@@ -864,7 +943,7 @@
           <div class="cred-card" tabindex="0">
             <span class="cred-issuer">Microsoft</span>
             <span class="cred-name">Microsoft Certified: Skills Portfolio</span>
-            <span class="cred-what">Microsoft's certification track for leading AI transformation and administering Copilot in the enterprise.</span>
+            <span class="cred-what">Microsoft's certification track for leading AI transformation and administering Copilot in the enterprise. Currently working at Associate level across the Microsoft stack.</span>
             <span class="cred-year">2026</span>
             <ul class="cred-sub">
               <li>Microsoft Certified: AI Transformation Leader</li>
@@ -1032,6 +1111,7 @@
             <span class="cred-issuer">ServiceNow</span>
             <span class="cred-name">IT Leadership Professional Certificate</span>
             <span class="cred-what">Leading IT delivery on the world's largest workflow platform.</span>
+            <span class="cred-year">2024</span>
           </div>
           <div class="cred-card" tabindex="0">
             <span class="cred-issuer">BlueDot Impact</span>
@@ -1070,7 +1150,7 @@
           <img src="/assets/badges/lean-six-sigma-black-belt.webp" alt="Lean Six Sigma Black Belt badge, Six Sigma Society" onerror="this.remove()">
           <img src="/assets/badges/mckinsey-forward.png" alt="McKinsey Forward Program badge, McKinsey.org" onerror="this.remove()">
           <img src="/assets/badges/itmlp.svg" alt="ITMLP Certified IT Manager badge, IT Management and Leadership Institute" onerror="this.remove()">
-          <img src="/assets/badges/microsoft-ai-transformation-leader.png" alt="Microsoft Certified AI Transformation Leader badge" onerror="this.remove()">
+          <img src="/assets/badges/microsoft-certified-associate.svg" alt="Microsoft Certified Associate badge" onerror="this.remove()">
         </div>
       </div>
     </div>
@@ -1337,7 +1417,7 @@
   const finePointer = matchMedia('(pointer: fine)').matches;
 
   // stat count-up, once, on first view
-  if (!reducedMotion) {
+  {
     const cntIO = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (!e.isIntersecting) return;
@@ -1381,7 +1461,7 @@
       if (heroGrid && sy < 1400) heroGrid.style.transform = 'translateY(' + (sy * 0.3) + 'px)';
       if (heroFloat && sy < 1400) heroFloat.style.transform = 'translateY(' + (sy * 0.14) + 'px)';
     }
-    if (!reducedMotion) {
+    {
       const trigger = innerHeight * 0.72;
       phrases.forEach((p, i) => {
         const r = p.getBoundingClientRect();
@@ -1407,7 +1487,6 @@
     if (!cinePending) { cinePending = true; requestAnimationFrame(() => { cinematicFrame(); cinePending = false; }); }
   }, { passive: true });
   cinematicFrame();
-  if (reducedMotion) phrases.forEach((p, i) => phraseWords[i].forEach(w => w.classList.add('lit')));
 
   // external links open in a new tab
   document.querySelectorAll('a[href^="http"]').forEach(a => {
