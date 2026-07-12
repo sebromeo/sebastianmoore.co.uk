@@ -16,6 +16,7 @@
   <meta property="og:url" content="https://sebastianmoore.co.uk/">
   <meta property="og:image" content="https://sebastianmoore.co.uk/assets/sebastian-moore.jpg">
   <meta property="og:locale" content="en_GB">
+  <meta property="og:site_name" content="Sebastian Moore">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
@@ -34,9 +35,22 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
+    "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://sebastianmoore.co.uk/#website",
+      "url": "https://sebastianmoore.co.uk/",
+      "name": "Sebastian Moore",
+      "inLanguage": "en-GB",
+      "publisher": { "@id": "https://sebastianmoore.co.uk/#sebastian-moore" }
+    },
+    {
     "@type": "ProfilePage",
+    "@id": "https://sebastianmoore.co.uk/#profilepage",
+    "url": "https://sebastianmoore.co.uk/",
+    "isPartOf": { "@id": "https://sebastianmoore.co.uk/#website" },
     "dateCreated": "2026-07-09T18:00:00+01:00",
-    "dateModified": "2026-07-10T12:00:00+01:00",
+    "dateModified": "2026-07-13T12:00:00+01:00",
     "mainEntity": {
       "@type": "Person",
       "@id": "https://sebastianmoore.co.uk/#sebastian-moore",
@@ -183,7 +197,7 @@
             "@type": "VideoObject",
             "name": "The Orchestration Layer: BRM in Modern Service Delivery",
             "description": "Sebastian Moore's Services Week talk introducing business relationship management in modern service delivery: framing the problem, the solution, and the value BRM brings to any organisation. Published on the UK Gov Design channel.",
-            "uploadDate": "2026-02-02",
+            "uploadDate": "2026-02-02T09:00:00+00:00",
             "thumbnailUrl": "https://i.ytimg.com/vi/ZYBs5XGPF_c/hqdefault.jpg",
             "contentUrl": "https://www.youtube.com/watch?v=ZYBs5XGPF_c",
             "embedUrl": "https://www.youtube.com/embed/ZYBs5XGPF_c"
@@ -262,6 +276,54 @@
         }
       ]
     }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sebastianmoore.co.uk/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Who is Sebastian Moore?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sebastian Moore is an AI governance and digital strategy specialist in the UK Civil Service, working as Senior Business Relationship Manager (Digital Business Partner) at HM Treasury. He was named in HotTopics' Future CIO 100, the AI 100 UK by Digital Leaders and Apolitical's Government AI 100, and recognised as a Global Top 10 BRM by the BRM Institute. A care leaver from County Durham, he chairs the Civil Service Care-Experienced Network and writes the GOVBRM newsletter."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does Sebastian Moore do at HM Treasury?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "As Senior Business Relationship Manager (Digital Business Partner), he leads Business Relationship Management for the Treasury's partner organisations, directing the Treasury Innovation Day, the Digital Excellence Series and the department's Innovation Awards."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is GOVBRM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "GOVBRM is Sebastian Moore's biweekly newsletter on aligning public sector priorities with digital delivery through business relationship management, read by over 1,250 practitioners across UK government and internationally."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What awards has Sebastian Moore won?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "He has been named to HotTopics' Future CIO 100 (2026), the AI 100 UK by Digital Leaders (2025) and Apolitical's Government AI 100 (2025), recognised as a Global Top 10 BRM by the BRM Institute (2026), and won the HM Treasury Innovation Award (2025) and HM Treasury Professional Award for Innovation (2022)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I book Sebastian Moore to speak at an event?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Message Sebastian Moore directly on LinkedIn (linkedin.com/in/sebx) to request a speaking slot."
+          }
+        }
+      ]
+    }
+    ]
   }
   </script>
 
