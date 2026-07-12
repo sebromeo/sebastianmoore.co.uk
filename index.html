@@ -660,6 +660,16 @@
       background: var(--bg);
     }
     .paper-card .links a:hover { border-color: var(--blue); color: var(--blue); }
+    /* blurred placeholder for the next paper */
+    .paper-card.soon { position: relative; overflow: hidden; margin-top: 20px; border-top-color: var(--rule); }
+    .paper-card.soon .soon-inner { filter: blur(5px); opacity: 0.4; user-select: none; pointer-events: none; }
+    .paper-card.soon .soon-tag {
+      position: absolute; inset: 0; display: flex; flex-direction: column; gap: 6px;
+      align-items: center; justify-content: center; text-align: center; padding: 0 20px;
+    }
+    .paper-card.soon .soon-tag .t { font-family: "Source Serif 4", Georgia, serif; font-size: 1.2rem; font-weight: 600; color: var(--navy); }
+    .paper-card.soon .soon-tag .s { font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; color: var(--blue-deep); }
+    @media (prefers-color-scheme: dark) { .paper-card.soon .soon-tag .s { color: var(--blue); } }
 
     /* credentials */
     .cred-intro { color: var(--ink-soft); margin-bottom: 28px; max-width: 660px; }
@@ -904,7 +914,7 @@
           <li><span class="year">2022</span><p>Graduates from Northumbria University and joins HM Treasury's new Darlington Economic Campus through the Civil Service Care Leaver Internship Scheme, two days later. Wins the HM Treasury Professional Award for Innovation the same year.</p></li>
           <li><span class="year">2023</span><p>Presents lived-experience evidence to the cross-government ministerial board on care leavers while at DCMS, then moves to DSIT to run the Group Chief Digital &amp; Information Officer's office.</p></li>
           <li><span class="year">2024</span><p>Delivers digital upskilling to over 2,000 civil servants. Returns to HM Treasury as a Business Relationship Manager. Co-founds the XGov Care Leavers Network, now the Civil Service Care-Experienced Network. Named in the Digital Leader Top 100 UK.</p></li>
-          <li><span class="year">2025</span><p>Named in the AI 100 UK by Digital Leaders and Apolitical's Government AI 100. Directs the Treasury Innovation Day and wins the HM Treasury Innovation Award. Launches GOVBRM.</p></li>
+          <li><span class="year">2025</span><p>Named in the AI 100 UK by Digital Leaders and Apolitical's Government AI 100. Directs the Treasury Innovation Day and wins the HM Treasury Innovation Award. Launches GOVBRM. Completes a PGCert in Innovation, Leadership &amp; Management at the University of York and begins a Level 7 senior-leader apprenticeship in Digital &amp; Technology Solutions at Henley Business School.</p></li>
           <li><span class="year">2026</span><p>Recognised as a Global Top BRM and named in HotTopics' Future CIO 100. Publishes first research on SSRN, studies AI and digital transformation in government at Oxford's Sa&iuml;d Business School, and judges the UK IT Industry Awards.</p></li>
         </ol>
       </div>
@@ -1067,6 +1077,15 @@
             <a href="https://doi.org/10.2139/ssrn.6819680">DOI</a>
             <a href="https://doi.org/10.5281/zenodo.20359587">Dataset on Zenodo</a>
           </div>
+        </div>
+        <div class="paper-card soon" role="img" aria-label="Next research paper, coming soon">
+          <div class="soon-inner" aria-hidden="true">
+            <p class="where">SSRN &middot; Policy briefing &middot; 2026</p>
+            <h3>Next paper in progress</h3>
+            <p>The next piece of published research is being written. This placeholder previews the shape of the entry while the work is completed and readied for open release.</p>
+            <div class="links"><span>Read on SSRN</span><span>DOI</span><span>Dataset</span></div>
+          </div>
+          <div class="soon-tag"><span class="t">Coming soon</span><span class="s">Next paper in progress</span></div>
         </div>
       </div>
     </div>
