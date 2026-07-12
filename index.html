@@ -555,14 +555,16 @@
     .xp li { padding: 24px 0; border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: 130px 1fr; gap: 24px; align-items: start; }
     .xp-logo { width: 130px; min-height: 52px; display: flex; align-items: center; justify-content: flex-start; }
     .xp-logo img { width: auto; max-width: 124px; object-fit: contain; transition: transform 0.25s ease; }
-    /* Per-department heights: these official lockups place the crest above a
-       1-line (HMT) or 3-line (DSIT/DCMS/DESNZ) name, so equal total height makes
-       the crests different sizes. Sizing each so the CREST lands at ~20px makes
-       the crests and wordmark text uniform; only total height varies by name length. */
-    .xp-logo img.l-hmt   { height: 40px; }
-    .xp-logo img.l-dsit  { height: 68px; }
-    .xp-logo img.l-dcms  { height: 68px; }
-    .xp-logo img.l-desnz { height: 66px; }
+    /* Per-department heights. These official lockups stack the crest above a
+       1-line (HMT) or 3-line (DSIT/DCMS/DESNZ) name, so no single rule makes them
+       all look equal: matching total height makes HMT's crest too big, matching
+       the crest makes HMT's whole block look too small. These values are the
+       balanced middle - HMT's crest is only mildly larger so every block reads at
+       a similar visual weight. Tuned against a composited preview of all four. */
+    .xp-logo img.l-hmt   { height: 50px; }
+    .xp-logo img.l-dsit  { height: 66px; }
+    .xp-logo img.l-dcms  { height: 66px; }
+    .xp-logo img.l-desnz { height: 64px; }
     .xp-logo.stack { flex-direction: column; align-items: flex-start; gap: 14px; }
     .xp li:hover .xp-logo img, .xp li:focus-within .xp-logo img { transform: scale(1.16); }
     .logo-dark { display: none; }
