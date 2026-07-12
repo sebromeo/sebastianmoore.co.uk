@@ -639,6 +639,20 @@
     .rec-list li:last-child { border-bottom: none; padding-bottom: 0; }
     .rec-list .what { font-size: 0.97rem; font-weight: 500; color: var(--ink); }
     .rec-list .what .by { color: var(--ink-faint); font-weight: 400; }
+    /* award name sweeps gold left-to-right on hover/focus */
+    .rec-list .award-text {
+      display: inline-block;
+      background-image: linear-gradient(to right, #c9a227 50%, var(--ink) 50%);
+      background-size: 200% 100%;
+      background-position: 100% 0;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      transition: background-position 0.6s ease;
+    }
+    .rec-list li:hover .award-text, .rec-list li:focus .award-text, .rec-list li:focus-within .award-text {
+      background-position: 0 0;
+    }
     .rec-list .year { font-size: 0.8rem; font-weight: 600; color: var(--blue-deep); white-space: nowrap; font-variant-numeric: tabular-nums; }
     @media (prefers-color-scheme: dark) { .rec-list .year { color: var(--blue); } }
 
@@ -896,7 +910,7 @@
         <div class="speaker-card">
           <p class="sk-label">Speaker bio</p>
           <p class="sk-copy">Sebastian Moore is a Senior Business Relationship Manager at HM Treasury and one of the UK's recognised voices in AI governance and digital strategy. Named in HotTopics' Future CIO 100, the AI 100 UK by Digital Leaders and Apolitical's Government AI 100, and recognised as a Global Top BRM by the BRM Institute, he works at the seam where government ambition meets delivery. He writes GOVBRM, a newsletter read by more than 1,250 practitioners worldwide, publishes research on social mobility policy, and chairs the Civil Service Care-Experienced Network. A care leaver from County Durham, he speaks on responsible AI adoption, business relationship management, and the systems that shape organisations and lives, bringing evidence, candour and lived experience to every stage.</p>
-          <a class="btn-message" href="https://www.linkedin.com/messaging/compose/?recipient=sebx">Request a speaking slot &middot; Message me on LinkedIn</a>
+          <a class="btn-message" href="https://www.linkedin.com/messaging/compose/?recipient=sebx">Book me to speak &middot; Message me on LinkedIn</a>
           <a class="btn-message btn-ghost" href="/assets/sebastian-moore-hd.jpg" download="Sebastian-Moore-headshot.jpg">Download my headshot (HD)</a>
         </div>
       </div>
@@ -1048,16 +1062,16 @@
     <div class="wrap-wide section-grid reveal">
       <p class="label">Recognition</p>
       <ul class="rec-list">
-        <li><span class="what">Future CIO 100 <span class="by">&middot; HotTopics</span></span><span class="year">2026</span></li>
-        <li><span class="what">Global Top BRM <span class="by">&middot; BRM Institute</span></span><span class="year">2026</span></li>
-        <li><span class="what">Judge <span class="by">&middot; UK IT Industry Awards</span></span><span class="year">2026</span></li>
-        <li><span class="what">AI 100 UK <span class="by">&middot; Digital Leaders</span></span><span class="year">2025</span></li>
-        <li><span class="what">Government AI 100 <span class="by">&middot; Apolitical</span></span><span class="year">2025</span></li>
-        <li><span class="what">Innovation Award <span class="by">&middot; HM Treasury</span></span><span class="year">2025</span></li>
-        <li><span class="what">Rising Star, finalist <span class="by">&middot; North East Tech Awards</span></span><span class="year">2025</span></li>
-        <li><span class="what">Diversity &amp; Inclusion, finalist <span class="by">&middot; The Northern Echo BUSINESSiQ Awards</span></span><span class="year">2025</span></li>
-        <li><span class="what">Digital Leader Top 100 UK <span class="by">&middot; Digital Leaders</span></span><span class="year">2024</span></li>
-        <li><span class="what">Professional Award for Innovation <span class="by">&middot; HM Treasury</span></span><span class="year">2022</span></li>
+        <li tabindex="0"><span class="what"><span class="award-text">Global Future CIO 100</span> <span class="by">&middot; HotTopics</span></span><span class="year">2026</span></li>
+        <li tabindex="0"><span class="what"><span class="award-text">Global Top 10 BRM</span> <span class="by">&middot; BRM Institute</span></span><span class="year">2026</span></li>
+        <li tabindex="0"><span class="what"><span class="award-text">Judge</span> <span class="by">&middot; UK IT Industry Awards</span></span><span class="year">2026</span></li>
+        <li tabindex="0"><span class="what"><span class="award-text">AI 100 UK</span> <span class="by">&middot; Digital Leaders</span></span><span class="year">2025</span></li>
+        <li tabindex="0"><span class="what"><span class="award-text">Global Government AI 100</span> <span class="by">&middot; Apolitical</span></span><span class="year">2025</span></li>
+        <li tabindex="0"><span class="what"><span class="award-text">Innovation Award</span> <span class="by">&middot; HM Treasury</span></span><span class="year">2025</span></li>
+        <li tabindex="0"><span class="what"><span class="award-text">Rising Star, finalist</span> <span class="by">&middot; North East Tech Awards</span></span><span class="year">2025</span></li>
+        <li tabindex="0"><span class="what"><span class="award-text">Diversity &amp; Inclusion, finalist</span> <span class="by">&middot; The Northern Echo BUSINESSiQ Awards</span></span><span class="year">2025</span></li>
+        <li tabindex="0"><span class="what"><span class="award-text">Digital Leader Top 100 UK</span> <span class="by">&middot; Digital Leaders</span></span><span class="year">2024</span></li>
+        <li tabindex="0"><span class="what"><span class="award-text">Professional Award for Innovation</span> <span class="by">&middot; HM Treasury</span></span><span class="year">2022</span></li>
       </ul>
     </div>
   </section>
