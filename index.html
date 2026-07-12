@@ -71,7 +71,7 @@
         { "@type": "Organization", "name": "Government Digital and Data Profession, UK Civil Service" },
         { "@type": "Organization", "name": "Civil Service Care-Experienced Network", "description": "Chair and co-founder" },
         { "@type": "Organization", "name": "UK IT Industry Awards", "description": "Judge" },
-        { "@type": "Organization", "name": "Chartered Management Institute", "description": "Professional Member (MCMI), Chartered Fellowship in progress" }
+        { "@type": "Organization", "name": "Chartered Management Institute", "description": "Professional Member (MCMI), Chartered Manager (CMgr) in progress" }
       ],
       "hasCredential": [
         { "@type": "EducationalOccupationalCredential", "name": "MSc Digital & Technology Solutions (IT Strategy Specialist), Henley Business School (in progress, 2027)" },
@@ -165,7 +165,7 @@
           "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP", "availability": "https://schema.org/InStock", "validFrom": "2026-07-11", "url": "https://aiweek.digileaders.com/" },
           "organizer": { "@type": "Organization", "name": "Digital Leaders", "url": "https://digileaders.com/" },
           "performer": { "@id": "https://sebastianmoore.co.uk/#sebastian-moore" },
-          "description": "Sebastian Moore hosts a session on business relationship management and AI at Digital Leaders' AI Week, a ten-day online summit. Free to attend; session date to be confirmed.",
+          "description": "Sebastian Moore hosts a session on business relationship management and AI at Digital Leaders' AI Week, a ten-day online summit. Free to attend; taking place in October 2026, exact date to be confirmed.",
           "location": { "@type": "VirtualLocation", "url": "https://aiweek.digileaders.com/" }
         },
         {
@@ -434,11 +434,11 @@
       font-family: "Source Serif 4", Georgia, serif;
       font-size: clamp(2.8rem, 8vw, 5rem);
       font-weight: 600;
-      line-height: 1.02;
+      line-height: 1.15;
       letter-spacing: -0.02em;
       color: #ffffff;
       max-width: 16ch;
-      margin-bottom: 18px;
+      margin-bottom: 10px;
     }
     .hero .strap {
       font-family: "Source Serif 4", Georgia, serif; font-style: italic;
@@ -555,6 +555,8 @@
     .xp li { padding: 24px 0; border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: 92px 1fr; gap: 20px; align-items: start; }
     .xp-logo { width: 96px; height: 64px; display: flex; align-items: center; justify-content: center; }
     .xp-logo img { max-width: 96px; max-height: 64px; object-fit: contain; transition: transform 0.25s ease; }
+    .xp-logo.stack { flex-direction: column; gap: 4px; }
+    .xp-logo.stack img { max-height: 28px; }
     .xp li:hover .xp-logo img, .xp li:focus-within .xp-logo img { transform: scale(1.16); }
     .logo-dark { display: none; }
     @media (prefers-color-scheme: dark) {
@@ -677,10 +679,9 @@
     @media (prefers-color-scheme: dark) { .cred-card .cred-year { color: var(--blue); } }
     .edu-list { list-style: none; margin-top: 8px; margin-bottom: 34px; }
     .edu-list li { padding: 11px 0; border-bottom: 1px solid var(--rule); font-size: 0.95rem; display: flex; align-items: center; gap: 16px; }
-    .edu-logo { width: 48px; height: 48px; object-fit: contain; flex-shrink: 0; transition: transform 0.25s ease; }
+    .edu-logo { width: 48px; height: 48px; object-fit: contain; border-radius: 6px; flex-shrink: 0; transition: transform 0.25s ease; }
     .edu-list li:hover .edu-logo, .edu-list li:hover .edu-mono, .edu-list li:focus-within .edu-logo { transform: scale(1.3); }
     .edu-mono { transition: transform 0.25s ease; }
-    .invert-always { filter: invert(1); }
     .edu-mono {
       width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
       display: inline-flex; align-items: center; justify-content: center;
@@ -835,7 +836,7 @@
       <div class="stat" tabindex="0" data-tip="Subscribers and readers of my GOVBRM newsletter across UK government and internationally."><div class="num"><span class="cnt" data-target="1250">1,250</span><span class="accent">+</span></div><div class="what">GOVBRM readers</div></div>
       <div class="stat" tabindex="0" data-tip="Civil servants reached through digital and AI upskilling sessions I designed and delivered across departments."><div class="num"><span class="cnt" data-target="2000">2,000</span><span class="accent">+</span></div><div class="what">Civil servants upskilled</div></div>
       <div class="stat" tabindex="0" data-tip="Future CIO 100, AI 100 UK, Government AI 100, Global Top BRM and Digital Leader Top 100 UK."><div class="num"><span class="cnt" data-target="5">5</span></div><div class="what">National &amp; global recognition lists</div></div>
-      <div class="stat" tabindex="0" data-tip="Professional certification groups spanning AI, business relationship management, service management and leadership."><div class="num"><span class="cnt" data-target="16">16</span><span class="accent">+</span></div><div class="what">Professional certifications</div></div>
+      <div class="stat" tabindex="0" data-tip="Professional certification groups spanning AI, business relationship management, service management and leadership."><div class="num"><span class="cnt" data-target="20">20</span><span class="accent">+</span></div><div class="what">Professional certifications</div></div>
       <div class="stat" tabindex="0" data-tip="Customised tools, templates and automations built across my workflow, ready to reuse from day one."><div class="num"><span class="cnt" data-target="80">80</span><span class="accent">+</span></div><div class="what">Customised tools &amp; templates built</div></div>
     </div>
   </div>
@@ -895,10 +896,10 @@
           </div>
         </li>
         <li>
-          <div class="xp-logo"><img class="mono-invert" src="/assets/logos/dsit.svg" alt="Department for Science, Innovation and Technology logo"></div>
+          <div class="xp-logo stack"><img class="mono-invert" src="/assets/logos/dsit.svg" alt="Department for Science, Innovation and Technology logo"><img class="mono-invert" src="/assets/logos/desnz.svg" alt="Department for Energy Security and Net Zero logo"></div>
           <div>
           <p class="role">Assistant Private Secretary to the Group Chief Digital &amp; Information Officer</p>
-          <p class="org-line">Department for Science, Innovation and Technology &middot; 2023 to 2024</p>
+          <p class="org-line">Department for Science, Innovation and Technology &amp; Department for Energy Security and Net Zero &middot; 2023 to 2024</p>
           <p>Managed the Group CDIO's strategic agenda across ministerial and Director General networks. Orchestrated the SCS Digital Excellence Programme for 500+ senior leaders and digital upskilling initiatives reaching over 2,000 staff.</p>
           </div>
         </li>
@@ -975,9 +976,9 @@
             <span class="tag">Free to attend</span>
           </div>
           <div class="event">
-            <p class="when">Autumn 2026 &middot; Date to be confirmed</p>
+            <p class="when">October 2026 &middot; Date to be confirmed</p>
             <h3><a href="https://aiweek.digileaders.com/">BRM &amp; AI at Digital Leaders AI Week</a></h3>
-            <p>Hosting a session on business relationship management and AI at Digital Leaders' AI Week, the ten-day online summit on making AI work. Session date and sign-up link to follow.</p>
+            <p>Hosting a session on business relationship management and AI at Digital Leaders' AI Week, the ten-day online summit on making AI work. Taking place in October 2026; exact date and sign-up link to follow.</p>
             <span class="tag">Session host &middot; Online</span>
             <a class="tag" href="https://aiweek.digileaders.com/">AI Week sign-up</a>
           </div>
@@ -1048,11 +1049,11 @@
         <p class="accent-phrase">Proof, not promises.</p>
         <p class="cred-cat">Education</p>
         <ul class="edu-list">
-          <li><img class="edu-logo" src="/assets/logos/henley.svg" alt="" onerror="this.outerHTML='<span class=&quot;edu-mono&quot;>H</span>'"><span><span class="school">Henley Business School</span> <span class="detail">&middot; MSc Digital &amp; Technology Solutions, IT Strategy Specialist (2027, in progress)</span></span></li>
+          <li><img class="edu-logo" src="/assets/logos/henley.jpg" alt="" onerror="this.outerHTML='<span class=&quot;edu-mono&quot;>H</span>'"><span><span class="school">Henley Business School</span> <span class="detail">&middot; MSc Digital &amp; Technology Solutions, IT Strategy Specialist (2027, in progress)</span></span></li>
           <li><img class="edu-logo" src="/assets/logos/oxford-said.svg" alt="" onerror="this.outerHTML='<span class=&quot;edu-mono&quot;>O</span>'"><span><span class="school">Sa&iuml;d Business School, University of Oxford</span> <span class="detail">&middot; AI and Digital Transformation in Government (2026)</span></span></li>
           <li><img class="edu-logo" src="/assets/logos/durham.svg" alt="" onerror="this.outerHTML='<span class=&quot;edu-mono&quot;>D</span>'"><span><span class="school">Durham University</span> <span class="detail">&middot; Artificial Intelligence: Foundations for Practice and Research (2026)</span></span></li>
-          <li><img class="edu-logo invert-always" src="/assets/logos/york.svg" alt="" onerror="this.outerHTML='<span class=&quot;edu-mono&quot;>Y</span>'"><span><span class="school">University of York</span> <span class="detail">&middot; PGCert Innovation, Leadership &amp; Management (2025)</span></span></li>
-          <li><img class="edu-logo" src="/assets/logos/northumbria.svg" alt="" onerror="this.outerHTML='<span class=&quot;edu-mono&quot;>N</span>'"><span><span class="school">Northumbria University</span> <span class="detail">&middot; BA Hons International Relations &amp; Politics (2022)</span></span></li>
+          <li><img class="edu-logo" src="/assets/logos/york.jpg" alt="" onerror="this.outerHTML='<span class=&quot;edu-mono&quot;>Y</span>'"><span><span class="school">University of York</span> <span class="detail">&middot; PGCert Innovation, Leadership &amp; Management (2025)</span></span></li>
+          <li><img class="edu-logo" src="/assets/logos/northumbria.jpg" alt="" onerror="this.outerHTML='<span class=&quot;edu-mono&quot;>N</span>'"><span><span class="school">Northumbria University</span> <span class="detail">&middot; BA Hons International Relations &amp; Politics (2022)</span></span></li>
         </ul>
 
         <p class="cred-cat">Certifications</p>
@@ -1209,7 +1210,7 @@
           <div class="cred-card" tabindex="0">
             <span class="cred-issuer">Chartered Management Institute</span>
             <span class="cred-name">Professional Member (MCMI)</span>
-            <span class="cred-what">Chartered Fellowship (FCMI) in progress.</span>
+            <span class="cred-what">Chartered Manager (CMgr) in progress.</span>
             <span class="cred-year">2026</span>
           </div>
           <div class="cred-card" tabindex="0">
@@ -1281,6 +1282,16 @@
           <img src="/assets/badges/mckinsey-forward.png" alt="McKinsey Forward Program badge, McKinsey.org" onerror="this.remove()">
           <img src="/assets/badges/itmlp.svg" alt="ITMLP Certified IT Manager badge, IT Management and Leadership Institute" onerror="this.remove()">
           <img src="/assets/badges/microsoft-certified-associate.svg" alt="Microsoft Certified Associate badge" onerror="this.remove()">
+          <img src="/assets/badges/cmi-foundation-chartered-manager.webp" alt="Foundation Chartered Manager (fCMgr) badge, Chartered Management Institute" onerror="this.remove()">
+          <img src="/assets/badges/itil-ai-governance-unlocked.png" alt="ITIL AI Governance Unlocked badge, PeopleCert" onerror="this.remove()">
+          <img src="/assets/badges/itil4-foundation.png" alt="ITIL 4 Foundation badge, PeopleCert" onerror="this.remove()">
+          <img src="/assets/badges/mbcs-professional-member.png" alt="MBCS Professional Member badge, BCS The Chartered Institute for IT" onerror="this.remove()">
+          <img src="/assets/badges/government-ai-100.png" alt="The Government AI 100 badge, Apolitical, 2025" onerror="this.remove()">
+          <img src="/assets/badges/pmi-member.png" alt="PMI Member badge, Project Management Institute" onerror="this.remove()">
+          <img src="/assets/badges/hmt-innovation-award.png" alt="HM Treasury Digital &amp; Data Achievement Innovation Award badge, 2025" onerror="this.remove()">
+          <img src="/assets/badges/oracle-oci-ai-foundations.png" alt="Oracle Cloud Infrastructure AI Foundations Associate badge, 2025" onerror="this.remove()">
+          <img src="/assets/badges/cloud-greenops-philosopher.png" alt="Cloud GreenOps Philosopher badge" onerror="this.remove()">
+          <img src="/assets/badges/cloud-greenops-for-ai.png" alt="Cloud GreenOps for AI badge" onerror="this.remove()">
         </div>
       </div>
     </div>
@@ -1451,7 +1462,7 @@
       <div>
         <article class="feature">
           <p class="where">GOVBRM &middot; Biweekly newsletter &middot; 1,250+ readers</p>
-          <h3><a href="https://www.linkedin.com/in/sebx">GOVBRM: Government Business Relationship Management</a></h3>
+          <h3><a href="https://www.linkedin.com/newsletters/govbrm-7434062588046491648/">GOVBRM: Government Business Relationship Management</a></h3>
           <p>Insights on aligning public sector priorities with digital delivery, through business relationship management. Read by over 1,250 practitioners across the UK civil service and internationally.</p>
         </article>
         <article class="feature">
