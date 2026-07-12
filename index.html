@@ -552,11 +552,11 @@
 
     /* experience */
     .xp { list-style: none; }
-    .xp li { padding: 24px 0; border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: 92px 1fr; gap: 20px; align-items: start; }
-    .xp-logo { width: 96px; height: 64px; display: flex; align-items: center; justify-content: center; }
-    .xp-logo img { height: 40px; width: auto; max-width: 92px; object-fit: contain; transition: transform 0.25s ease; }
-    .xp-logo.stack { flex-direction: column; gap: 7px; }
-    .xp-logo.stack img { height: 22px; max-width: 92px; }
+    .xp li { padding: 24px 0; border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: 116px 1fr; gap: 24px; align-items: start; }
+    .xp-logo { width: 116px; min-height: 52px; display: flex; align-items: center; justify-content: flex-start; }
+    .xp-logo img { height: 44px; width: auto; max-width: 112px; object-fit: contain; transition: transform 0.25s ease; }
+    .xp-logo.stack { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .xp-logo.stack img { height: 44px; max-width: 112px; }
     .xp li:hover .xp-logo img, .xp li:focus-within .xp-logo img { transform: scale(1.16); }
     .logo-dark { display: none; }
     @media (prefers-color-scheme: dark) {
