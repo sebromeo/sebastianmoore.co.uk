@@ -554,15 +554,14 @@
     .xp { list-style: none; }
     .xp li { padding: 24px 0; border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: 92px 1fr; gap: 20px; align-items: start; }
     .xp-logo { width: 96px; height: 64px; display: flex; align-items: center; justify-content: center; }
-    .xp-logo img { height: 48px; width: auto; max-width: 90px; object-fit: contain; transition: transform 0.25s ease; }
-    .xp-logo.stack { flex-direction: column; gap: 8px; }
-    .xp-logo.stack img { height: 27px; max-width: 90px; }
+    .xp-logo img { height: 40px; width: auto; max-width: 92px; object-fit: contain; transition: transform 0.25s ease; }
+    .xp-logo.stack { flex-direction: column; gap: 7px; }
+    .xp-logo.stack img { height: 22px; max-width: 92px; }
     .xp li:hover .xp-logo img, .xp li:focus-within .xp-logo img { transform: scale(1.16); }
     .logo-dark { display: none; }
     @media (prefers-color-scheme: dark) {
       .logo-light { display: none; }
       .logo-dark { display: inline; }
-      .mono-invert { filter: brightness(0) invert(1); opacity: 0.92; }
       .edu-logo { background: #eef3f9; border-radius: 4px; padding: 3px; }
     }
     @media (max-width: 560px) { .xp li { grid-template-columns: 1fr; } .xp-logo { display: none; } }
@@ -694,8 +693,25 @@
 
     /* badges */
     .badges-row { display: flex; flex-wrap: wrap; gap: 22px; align-items: center; margin-top: 16px; }
+    .badge { position: relative; display: inline-flex; outline: none; }
     .badges-row img { height: 82px; width: auto; transition: transform 0.25s ease; }
-    .badges-row img:hover, .badges-row img:focus-visible { transform: scale(1.18); }
+    .badge:hover img, .badge:focus-visible img { transform: scale(1.18); }
+    .badge[data-tip]::after {
+      content: attr(data-tip);
+      position: absolute; left: 50%; transform: translateX(-50%) translateY(4px); bottom: calc(100% + 10px);
+      width: max-content; max-width: 200px; padding: 8px 12px; border-radius: 4px;
+      background: #0f2337; color: #f4f6f9; font-size: 0.74rem; font-weight: 500; line-height: 1.4;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      opacity: 0; visibility: hidden; transition: opacity 0.2s ease, transform 0.2s ease;
+      pointer-events: none; z-index: 20;
+    }
+    .badge[data-tip]:hover::after, .badge[data-tip]:focus-visible::after {
+      opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
+    }
+    @media (prefers-color-scheme: dark) {
+      .badge[data-tip]::after { background: #f4f6f9; color: #0f2337; }
+    }
 
     /* recommendations marquee */
     .recs { overflow: hidden; padding: 84px 0; background: var(--bg-tint); }
@@ -896,7 +912,10 @@
           </div>
         </li>
         <li>
-          <div class="xp-logo stack"><img class="mono-invert" src="/assets/logos/dsit.svg" alt="Department for Science, Innovation and Technology logo"><img class="mono-invert" src="/assets/logos/desnz.svg" alt="Department for Energy Security and Net Zero logo"></div>
+          <div class="xp-logo stack">
+            <img class="logo-light" src="/assets/logos/dsit.png" alt="Department for Science, Innovation and Technology logo"><img class="logo-dark" src="/assets/logos/dsit-white.png" alt="Department for Science, Innovation and Technology logo">
+            <img class="logo-light" src="/assets/logos/desnz.png" alt="Department for Energy Security and Net Zero logo"><img class="logo-dark" src="/assets/logos/desnz-white.png" alt="Department for Energy Security and Net Zero logo">
+          </div>
           <div>
           <p class="role">Assistant Private Secretary to the Group Chief Digital &amp; Information Officer</p>
           <p class="org-line">Integrated Corporate Services - ICS Digital (DESNZ &amp; DSIT) &middot; 2023 to 2024</p>
@@ -904,7 +923,7 @@
           </div>
         </li>
         <li>
-          <div class="xp-logo"><img class="mono-invert" src="/assets/logos/dcms.svg" alt="Department for Culture, Media and Sport logo"></div>
+          <div class="xp-logo"><img class="logo-light" src="/assets/logos/dcms.png" alt="Department for Culture, Media and Sport logo"><img class="logo-dark" src="/assets/logos/dcms-white.png" alt="Department for Culture, Media and Sport logo"></div>
           <div>
           <p class="role">Executive Assistant to Deputy Directors</p>
           <p class="org-line">Department for Culture, Media and Sport &middot; 2023</p>
@@ -1269,29 +1288,31 @@
 
         <p class="cred-cat">Digital badges</p>
         <div class="badges-row">
-          <img src="/assets/badges/future-cio-100.png" alt="HotTopics Future CIO 100 2026 Winner badge" onerror="this.remove()">
-          <img src="/assets/badges/iso-42001-lead-auditor.png" alt="ISO/IEC 42001:2023 Lead Auditor badge, Mastermind Assurance" onerror="this.remove()">
-          <img src="/assets/badges/iso-27001-lead-auditor.png" alt="ISO/IEC 27001:2022 Lead Auditor badge, Mastermind Assurance" onerror="this.remove()">
-          <img src="/assets/badges/cbrm.png" alt="Certified Business Relationship Manager badge, APMG International" onerror="this.remove()">
-          <img src="/assets/badges/brmp.png" alt="Business Relationship Management Professional badge, APMG International" onerror="this.remove()">
-          <img src="/assets/badges/high-performing-brm.png" alt="The High Performing BRM Designation badge, Barkley Consulting Group" onerror="this.remove()">
-          <img src="/assets/badges/top-brm-2026.png" alt="Top BRM 2026 badge, BRM Institute" onerror="this.remove()">
-          <img src="/assets/badges/ai-100-uk.png" alt="AI 100 UK badge, Digital Leaders" onerror="this.remove()">
-          <img src="/assets/badges/itil4-specialist-brm.png" alt="ITIL 4 Specialist Business Relationship Management badge, PeopleCert" onerror="this.remove()">
-          <img src="/assets/badges/lean-six-sigma-black-belt.webp" alt="Lean Six Sigma Black Belt badge, Six Sigma Society" onerror="this.remove()">
-          <img src="/assets/badges/mckinsey-forward.png" alt="McKinsey Forward Program badge, McKinsey.org" onerror="this.remove()">
-          <img src="/assets/badges/itmlp.svg" alt="ITMLP Certified IT Manager badge, IT Management and Leadership Institute" onerror="this.remove()">
-          <img src="/assets/badges/microsoft-certified-associate.svg" alt="Microsoft Certified Associate badge" onerror="this.remove()">
-          <img src="/assets/badges/cmi-foundation-chartered-manager.webp" alt="Foundation Chartered Manager (fCMgr) badge, Chartered Management Institute" onerror="this.remove()">
-          <img src="/assets/badges/itil-ai-governance-unlocked.png" alt="ITIL AI Governance Unlocked badge, PeopleCert" onerror="this.remove()">
-          <img src="/assets/badges/itil4-foundation.png" alt="ITIL 4 Foundation badge, PeopleCert" onerror="this.remove()">
-          <img src="/assets/badges/mbcs-professional-member.png" alt="MBCS Professional Member badge, BCS The Chartered Institute for IT" onerror="this.remove()">
-          <img src="/assets/badges/government-ai-100.png" alt="The Government AI 100 badge, Apolitical, 2025" onerror="this.remove()">
-          <img src="/assets/badges/pmi-member.png" alt="PMI Member badge, Project Management Institute" onerror="this.remove()">
-          <img src="/assets/badges/hmt-innovation-award.png" alt="HM Treasury Digital &amp; Data Achievement Innovation Award badge, 2025" onerror="this.remove()">
-          <img src="/assets/badges/oracle-oci-ai-foundations.png" alt="Oracle Cloud Infrastructure AI Foundations Associate badge, 2025" onerror="this.remove()">
-          <img src="/assets/badges/cloud-greenops-philosopher.png" alt="Cloud GreenOps Philosopher badge" onerror="this.remove()">
-          <img src="/assets/badges/cloud-greenops-for-ai.png" alt="Cloud GreenOps for AI badge" onerror="this.remove()">
+          <span class="badge" tabindex="0" data-tip="Future CIO 100 (2026 Winner)"><img src="/assets/badges/future-cio-100.png" alt="HotTopics Future CIO 100 2026 Winner badge" onerror="this.parentElement.remove()"></span>
+          <span class="badge" tabindex="0" data-tip="ISO/IEC 42001 Lead Auditor"><img src="/assets/badges/iso-42001-lead-auditor.png" alt="ISO/IEC 42001:2023 Lead Auditor badge, Mastermind Assurance" onerror="this.parentElement.remove()"></span>
+          <span class="badge" tabindex="0" data-tip="ISO/IEC 27001 Lead Auditor"><img src="/assets/badges/iso-27001-lead-auditor.png" alt="ISO/IEC 27001:2022 Lead Auditor badge, Mastermind Assurance" onerror="this.parentElement.remove()"></span>
+          <span class="badge" tabindex="0" data-tip="Certified Business Relationship Manager (CBRM)"><img src="/assets/badges/cbrm.png" alt="Certified Business Relationship Manager badge, APMG International" onerror="this.parentElement.remove()"></span>
+          <span class="badge" tabindex="0" data-tip="Business Relationship Management Professional (BRMP)"><img src="/assets/badges/brmp.png" alt="Business Relationship Management Professional badge, APMG International" onerror="this.parentElement.remove()"></span>
+          <span class="badge" tabindex="0" data-tip="The High Performing BRM Designation"><img src="/assets/badges/high-performing-brm.png" alt="The High Performing BRM Designation badge, Barkley Consulting Group" onerror="this.parentElement.remove()"></span>
+          <span class="badge" tabindex="0" data-tip="Top BRM 2026"><img src="/assets/badges/top-brm-2026.png" alt="Top BRM 2026 badge, BRM Institute" onerror="this.parentElement.remove()"></span>
+          <span class="badge" tabindex="0" data-tip="AI 100 UK"><img src="/assets/badges/ai-100-uk.png" alt="AI 100 UK badge, Digital Leaders" onerror="this.parentElement.remove()"></span>
+          <span class="badge" tabindex="0" data-tip="ITIL 4 Specialist: Business Relationship Management"><img src="/assets/badges/itil4-specialist-brm.png" alt="ITIL 4 Specialist Business Relationship Management badge, PeopleCert" onerror="this.parentElement.remove()"></span>
+          <span class="badge" tabindex="0" data-tip="Lean Six Sigma Black Belt"><img src="/assets/badges/lean-six-sigma-black-belt.webp" alt="Lean Six Sigma Black Belt badge, Six Sigma Society" onerror="this.parentElement.remove()"></span>
+          <span class="badge" tabindex="0" data-tip="McKinsey Forward Program"><img src="/assets/badges/mckinsey-forward.png" alt="McKinsey Forward Program badge, McKinsey.org" onerror="this.parentElement.remove()"></span>
+          <span class="badge" tabindex="0" data-tip="ITMLP Certified IT Manager"><img src="/assets/badges/itmlp.svg" alt="ITMLP Certified IT Manager badge, IT Management and Leadership Institute" onerror="this.parentElement.remove()"></span>
+          <span class="badge" tabindex="0" data-tip="Microsoft Certified: Associate"><img src="/assets/badges/microsoft-certified-associate.svg" alt="Microsoft Certified Associate badge" onerror="this.parentElement.remove()"></span>
+          <span class="badge" tabindex="0" data-tip="Microsoft Certified: AI Transformation Leader"><img src="/assets/badges/ms-ai-transformation-leader.png" alt="Microsoft Certified AI Transformation Leader badge" onerror="this.parentElement.remove()"></span>
+          <span class="badge" tabindex="0" data-tip="Microsoft Certified: AI Business Professional"><img src="/assets/badges/ms-ai-business-professional.png" alt="Microsoft Certified AI Business Professional badge" onerror="this.parentElement.remove()"></span>
+          <span class="badge" tabindex="0" data-tip="Foundation Chartered Manager (fCMgr)"><img src="/assets/badges/cmi-foundation-chartered-manager.webp" alt="Foundation Chartered Manager (fCMgr) badge, Chartered Management Institute" onerror="this.parentElement.remove()"></span>
+          <span class="badge" tabindex="0" data-tip="ITIL: AI Governance Unlocked"><img src="/assets/badges/itil-ai-governance-unlocked.png" alt="ITIL AI Governance Unlocked badge, PeopleCert" onerror="this.parentElement.remove()"></span>
+          <span class="badge" tabindex="0" data-tip="ITIL 4 Foundation"><img src="/assets/badges/itil4-foundation.png" alt="ITIL 4 Foundation badge, PeopleCert" onerror="this.parentElement.remove()"></span>
+          <span class="badge" tabindex="0" data-tip="BCS Professional Member (MBCS)"><img src="/assets/badges/bcs-professional-member.png" alt="BCS Professional Member badge, BCS The Chartered Institute for IT" onerror="this.parentElement.remove()"></span>
+          <span class="badge" tabindex="0" data-tip="The Government AI 100 (2025)"><img src="/assets/badges/government-ai-100.png" alt="The Government AI 100 badge, Apolitical, 2025" onerror="this.parentElement.remove()"></span>
+          <span class="badge" tabindex="0" data-tip="PMI Member"><img src="/assets/badges/pmi-member.png" alt="PMI Member badge, Project Management Institute" onerror="this.parentElement.remove()"></span>
+          <span class="badge" tabindex="0" data-tip="HMT Digital &amp; Data Innovation Award (2025)"><img src="/assets/badges/hmt-innovation-award.png" alt="HM Treasury Digital &amp; Data Achievement Innovation Award badge, 2025" onerror="this.parentElement.remove()"></span>
+          <span class="badge" tabindex="0" data-tip="Oracle OCI AI Foundations Associate"><img src="/assets/badges/oracle-oci-ai-foundations.png" alt="Oracle Cloud Infrastructure AI Foundations Associate badge, 2025" onerror="this.parentElement.remove()"></span>
+          <span class="badge" tabindex="0" data-tip="Cloud GreenOps Philosopher"><img src="/assets/badges/cloud-greenops-philosopher.png" alt="Cloud GreenOps Philosopher badge" onerror="this.parentElement.remove()"></span>
+          <span class="badge" tabindex="0" data-tip="Cloud GreenOps for AI"><img src="/assets/badges/cloud-greenops-for-ai.png" alt="Cloud GreenOps for AI badge" onerror="this.parentElement.remove()"></span>
         </div>
       </div>
     </div>
@@ -1579,7 +1600,7 @@
   const phraseWords = phrases.map(p => [...p.querySelectorAll('.w')]);
 
   // credential cards + badges stagger
-  document.querySelectorAll('.cred-grid .cred-card, .badges-row img').forEach((el, i) => {
+  document.querySelectorAll('.cred-grid .cred-card, .badges-row .badge').forEach((el, i) => {
     el.classList.add('stag');
     el.style.transitionDelay = ((i % 10) * 45) + 'ms';
   });
