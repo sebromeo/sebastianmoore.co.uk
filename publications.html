@@ -33,6 +33,49 @@
     "name": "Writing, Research and Press by Sebastian Moore",
     "url": "https://sebastianmoore.co.uk/publications.html",
     "about": { "@id": "https://sebastianmoore.co.uk/#sebastian-moore" },
+    "image": [
+      {
+        "@type": "ImageObject",
+        "contentUrl": "https://sebastianmoore.co.uk/assets/press/sebastian-moore-newcastle-quayside-suit-tyne-bridge-hd.jpg",
+        "thumbnailUrl": "https://sebastianmoore.co.uk/assets/press/sebastian-moore-newcastle-quayside-suit-tyne-bridge.jpg",
+        "caption": "Sebastian Moore standing on Newcastle Quayside with the Tyne Bridge in the background",
+        "representativeOfPage": true,
+        "creditText": "Sebastian Moore",
+        "about": { "@id": "https://sebastianmoore.co.uk/#sebastian-moore" }
+      },
+      {
+        "@type": "ImageObject",
+        "contentUrl": "https://sebastianmoore.co.uk/assets/press/sebastian-moore-millennium-bridge-newcastle-gateshead-hd.jpg",
+        "thumbnailUrl": "https://sebastianmoore.co.uk/assets/press/sebastian-moore-millennium-bridge-newcastle-gateshead.jpg",
+        "caption": "Sebastian Moore leaning on a railing beneath the Gateshead Millennium Bridge",
+        "creditText": "Sebastian Moore",
+        "about": { "@id": "https://sebastianmoore.co.uk/#sebastian-moore" }
+      },
+      {
+        "@type": "ImageObject",
+        "contentUrl": "https://sebastianmoore.co.uk/assets/press/sebastian-moore-walking-newcastle-quayside-hd.jpg",
+        "thumbnailUrl": "https://sebastianmoore.co.uk/assets/press/sebastian-moore-walking-newcastle-quayside.jpg",
+        "caption": "Sebastian Moore walking along Newcastle Quayside towards the Tyne Bridge",
+        "creditText": "Sebastian Moore",
+        "about": { "@id": "https://sebastianmoore.co.uk/#sebastian-moore" }
+      },
+      {
+        "@type": "ImageObject",
+        "contentUrl": "https://sebastianmoore.co.uk/assets/press/sebastian-moore-sage-gateshead-millennium-bridge-hd.jpg",
+        "thumbnailUrl": "https://sebastianmoore.co.uk/assets/press/sebastian-moore-sage-gateshead-millennium-bridge.jpg",
+        "caption": "Sebastian Moore beside the River Tyne with the Sage Gateshead and Millennium Bridge behind him",
+        "creditText": "Sebastian Moore",
+        "about": { "@id": "https://sebastianmoore.co.uk/#sebastian-moore" }
+      },
+      {
+        "@type": "ImageObject",
+        "contentUrl": "https://sebastianmoore.co.uk/assets/press/sebastian-moore-northumbria-university-lecture-theatre-hd.jpg",
+        "thumbnailUrl": "https://sebastianmoore.co.uk/assets/press/sebastian-moore-northumbria-university-lecture-theatre.jpg",
+        "caption": "Sebastian Moore seated in a lecture theatre at Northumbria University",
+        "creditText": "Sebastian Moore",
+        "about": { "@id": "https://sebastianmoore.co.uk/#sebastian-moore" }
+      }
+    ],
     "hasPart": [
       {
         "@type": "ScholarlyArticle",
@@ -237,6 +280,25 @@
 
     .note { color: var(--ink-soft); font-size: 0.95rem; }
 
+    .carousel {
+      display: flex; gap: 26px; overflow-x: auto; padding-bottom: 14px;
+      scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+    }
+    .carousel-item {
+      flex: 0 0 auto; width: min(300px, 78vw); scroll-snap-align: start;
+    }
+    .carousel-item img {
+      display: block; width: 100%; aspect-ratio: 4 / 5.6; object-fit: cover;
+      border: 1px solid var(--rule); background: var(--bg-tint);
+    }
+    .carousel-item .cap { font-size: 0.86rem; color: var(--ink-soft); margin-top: 12px; line-height: 1.5; }
+    .carousel-item .dl-btn {
+      display: inline-block; margin-top: 10px; font-size: 0.78rem; font-weight: 600;
+      text-decoration: none; border: 1px solid var(--rule); padding: 7px 15px; border-radius: 2px;
+      color: var(--ink-soft); background: var(--bg);
+    }
+    .carousel-item .dl-btn:hover { border-color: var(--blue); color: var(--blue); }
+
     footer { background: var(--navy); padding: 48px 0 56px; margin-top: 20px; }
     @media (prefers-color-scheme: dark) { footer { background: var(--bg-tint); border-top: 1px solid var(--rule); } }
     footer p { font-size: 0.8rem; color: rgba(255,255,255,0.55); line-height: 1.7; }
@@ -268,6 +330,7 @@
       <a href="/#experience">Experience</a>
       <a href="/#events">Events</a>
       <a href="/publications.html">Writing</a>
+      <a href="/publications.html#photos">Photos</a>
       <a href="/#contact">Contact</a>
     </nav>
   </div>
@@ -348,6 +411,42 @@
           <h3>From Care to Career: Social Mobility in the UK Civil Service</h3>
           <p>On the Care Leaver Internship Scheme, and what genuine social mobility looks like inside the public service.</p>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="photos">
+    <div class="wrap-wide section-grid">
+      <p class="label">Photos</p>
+      <div>
+        <p class="note" style="margin-bottom:24px">Press-ready photography from Northumbria University's 2026 graduate shoot in Newcastle and Gateshead. Free to use for editorial and press purposes with credit to Sebastian Moore &middot; high-resolution downloads below each image.</p>
+        <div class="carousel" role="region" aria-label="Photos of Sebastian Moore">
+          <figure class="carousel-item">
+            <img src="assets/press/sebastian-moore-newcastle-quayside-suit-tyne-bridge.jpg" width="1007" height="1600" loading="lazy" decoding="async" alt="Sebastian Moore standing on Newcastle Quayside with the Tyne Bridge in the background">
+            <figcaption class="cap">Newcastle Quayside, with the Tyne Bridge behind.</figcaption>
+            <a class="dl-btn" href="assets/press/sebastian-moore-newcastle-quayside-suit-tyne-bridge-hd.jpg" download>Download HD</a>
+          </figure>
+          <figure class="carousel-item">
+            <img src="assets/press/sebastian-moore-millennium-bridge-newcastle-gateshead.jpg" width="1103" height="1600" loading="lazy" decoding="async" alt="Sebastian Moore leaning on a railing beneath the Gateshead Millennium Bridge">
+            <figcaption class="cap">Beneath the Gateshead Millennium Bridge.</figcaption>
+            <a class="dl-btn" href="assets/press/sebastian-moore-millennium-bridge-newcastle-gateshead-hd.jpg" download>Download HD</a>
+          </figure>
+          <figure class="carousel-item">
+            <img src="assets/press/sebastian-moore-walking-newcastle-quayside.jpg" width="1067" height="1600" loading="lazy" decoding="async" alt="Sebastian Moore walking along Newcastle Quayside towards the Tyne Bridge">
+            <figcaption class="cap">Walking Newcastle Quayside towards the Tyne Bridge.</figcaption>
+            <a class="dl-btn" href="assets/press/sebastian-moore-walking-newcastle-quayside-hd.jpg" download>Download HD</a>
+          </figure>
+          <figure class="carousel-item">
+            <img src="assets/press/sebastian-moore-sage-gateshead-millennium-bridge.jpg" width="1103" height="1600" loading="lazy" decoding="async" alt="Sebastian Moore beside the River Tyne with the Sage Gateshead and Millennium Bridge behind him">
+            <figcaption class="cap">On the Tyne, with Sage Gateshead and the Millennium Bridge behind.</figcaption>
+            <a class="dl-btn" href="assets/press/sebastian-moore-sage-gateshead-millennium-bridge-hd.jpg" download>Download HD</a>
+          </figure>
+          <figure class="carousel-item">
+            <img src="assets/press/sebastian-moore-northumbria-university-lecture-theatre.jpg" width="1103" height="1600" loading="lazy" decoding="async" alt="Sebastian Moore seated in a lecture theatre at Northumbria University">
+            <figcaption class="cap">Northumbria University, Newcastle.</figcaption>
+            <a class="dl-btn" href="assets/press/sebastian-moore-northumbria-university-lecture-theatre-hd.jpg" download>Download HD</a>
+          </figure>
+        </div>
       </div>
     </div>
   </section>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://sebastianmoore.co.uk/</loc>
     <lastmod>2026-07-13</lastmod>
@@ -8,8 +9,28 @@
   </url>
   <url>
     <loc>https://sebastianmoore.co.uk/publications.html</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://sebastianmoore.co.uk/assets/press/sebastian-moore-newcastle-quayside-suit-tyne-bridge-hd.jpg</image:loc>
+      <image:caption>Sebastian Moore standing on Newcastle Quayside with the Tyne Bridge in the background</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://sebastianmoore.co.uk/assets/press/sebastian-moore-millennium-bridge-newcastle-gateshead-hd.jpg</image:loc>
+      <image:caption>Sebastian Moore leaning on a railing beneath the Gateshead Millennium Bridge</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://sebastianmoore.co.uk/assets/press/sebastian-moore-walking-newcastle-quayside-hd.jpg</image:loc>
+      <image:caption>Sebastian Moore walking along Newcastle Quayside towards the Tyne Bridge</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://sebastianmoore.co.uk/assets/press/sebastian-moore-sage-gateshead-millennium-bridge-hd.jpg</image:loc>
+      <image:caption>Sebastian Moore beside the River Tyne with the Sage Gateshead and Millennium Bridge behind him</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://sebastianmoore.co.uk/assets/press/sebastian-moore-northumbria-university-lecture-theatre-hd.jpg</image:loc>
+      <image:caption>Sebastian Moore seated in a lecture theatre at Northumbria University</image:caption>
+    </image:image>
   </url>
 </urlset>
