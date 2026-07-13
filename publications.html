@@ -280,18 +280,27 @@
 
     .note { color: var(--ink-soft); font-size: 0.95rem; }
 
-    .carousel {
-      display: flex; gap: 26px; overflow-x: auto; padding-bottom: 14px;
-      scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+    .carousel-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
+    .carousel-toggle {
+      font-family: inherit; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--ink-soft); background: var(--bg); border: 1px solid var(--rule); border-radius: 999px;
+      padding: 8px 18px; cursor: pointer; flex-shrink: 0;
     }
+    .carousel-toggle:hover { border-color: var(--blue); color: var(--blue); }
+    @media (prefers-reduced-motion: reduce) { .carousel-toggle { display: none; } }
+    .carousel-viewport { overflow-x: auto; scrollbar-width: thin; scrollbar-color: var(--blue) transparent; margin: 0 -28px; padding: 0 28px; }
+    .carousel { display: flex; gap: 26px; width: max-content; padding-bottom: 16px; }
     .carousel-item {
-      flex: 0 0 auto; width: min(300px, 78vw); scroll-snap-align: start;
+      flex: 0 0 auto; width: min(440px, 80vw);
+      background: var(--bg); border: 1px solid var(--rule); border-top: 3px solid var(--blue);
+      padding: 16px 16px 22px;
+      box-shadow: 0 2px 10px rgba(5,28,44,0.05);
     }
     .carousel-item img {
-      display: block; width: 100%; aspect-ratio: 4 / 5.6; object-fit: cover;
-      border: 1px solid var(--rule); background: var(--bg-tint);
+      display: block; width: 100%; height: auto; max-height: 62vh;
+      object-fit: contain; background: var(--bg-tint);
     }
-    .carousel-item .cap { font-size: 0.86rem; color: var(--ink-soft); margin-top: 12px; line-height: 1.5; }
+    .carousel-item .cap { font-size: 0.86rem; color: var(--ink-soft); margin-top: 14px; line-height: 1.5; }
     .carousel-item .dl-btn {
       display: inline-block; margin-top: 10px; font-size: 0.78rem; font-weight: 600;
       text-decoration: none; border: 1px solid var(--rule); padding: 7px 15px; border-radius: 2px;
@@ -308,15 +317,6 @@
     @media (prefers-color-scheme: dark) { footer .foot-links a { color: var(--ink-soft); } }
     footer .foot-links a:hover { color: var(--blue); }
   </style>
-
-  <!-- Clarity tracking code for https://sebastianmoore.co.uk -->
-  <script>
-      (function(c,l,a,r,i,t,y){
-          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
-          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-      })(window, document, "clarity", "script", "xljrdv5shn");
-  </script>
 </head>
 <body>
 
@@ -415,42 +415,6 @@
     </div>
   </section>
 
-  <section id="photos">
-    <div class="wrap-wide section-grid">
-      <p class="label">Photos</p>
-      <div>
-        <p class="note" style="margin-bottom:24px">Press-ready photography from Northumbria University's 2026 graduate shoot in Newcastle and Gateshead. Free to use for editorial and press purposes with credit to Sebastian Moore &middot; high-resolution downloads below each image.</p>
-        <div class="carousel" role="region" aria-label="Photos of Sebastian Moore">
-          <figure class="carousel-item">
-            <img src="assets/press/sebastian-moore-newcastle-quayside-suit-tyne-bridge.jpg" width="1007" height="1600" loading="lazy" decoding="async" alt="Sebastian Moore standing on Newcastle Quayside with the Tyne Bridge in the background">
-            <figcaption class="cap">Newcastle Quayside, with the Tyne Bridge behind.</figcaption>
-            <a class="dl-btn" href="assets/press/sebastian-moore-newcastle-quayside-suit-tyne-bridge-hd.jpg" download>Download HD</a>
-          </figure>
-          <figure class="carousel-item">
-            <img src="assets/press/sebastian-moore-millennium-bridge-newcastle-gateshead.jpg" width="1103" height="1600" loading="lazy" decoding="async" alt="Sebastian Moore leaning on a railing beneath the Gateshead Millennium Bridge">
-            <figcaption class="cap">Beneath the Gateshead Millennium Bridge.</figcaption>
-            <a class="dl-btn" href="assets/press/sebastian-moore-millennium-bridge-newcastle-gateshead-hd.jpg" download>Download HD</a>
-          </figure>
-          <figure class="carousel-item">
-            <img src="assets/press/sebastian-moore-walking-newcastle-quayside.jpg" width="1067" height="1600" loading="lazy" decoding="async" alt="Sebastian Moore walking along Newcastle Quayside towards the Tyne Bridge">
-            <figcaption class="cap">Walking Newcastle Quayside towards the Tyne Bridge.</figcaption>
-            <a class="dl-btn" href="assets/press/sebastian-moore-walking-newcastle-quayside-hd.jpg" download>Download HD</a>
-          </figure>
-          <figure class="carousel-item">
-            <img src="assets/press/sebastian-moore-sage-gateshead-millennium-bridge.jpg" width="1103" height="1600" loading="lazy" decoding="async" alt="Sebastian Moore beside the River Tyne with the Sage Gateshead and Millennium Bridge behind him">
-            <figcaption class="cap">On the Tyne, with Sage Gateshead and the Millennium Bridge behind.</figcaption>
-            <a class="dl-btn" href="assets/press/sebastian-moore-sage-gateshead-millennium-bridge-hd.jpg" download>Download HD</a>
-          </figure>
-          <figure class="carousel-item">
-            <img src="assets/press/sebastian-moore-northumbria-university-lecture-theatre.jpg" width="1103" height="1600" loading="lazy" decoding="async" alt="Sebastian Moore seated in a lecture theatre at Northumbria University">
-            <figcaption class="cap">Northumbria University, Newcastle.</figcaption>
-            <a class="dl-btn" href="assets/press/sebastian-moore-northumbria-university-lecture-theatre-hd.jpg" download>Download HD</a>
-          </figure>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section id="press">
     <div class="wrap-wide section-grid">
       <p class="label">Press &amp; features</p>
@@ -482,6 +446,72 @@
     </div>
   </section>
 
+  <section id="photos">
+    <div class="wrap-wide">
+      <div class="carousel-head">
+        <div>
+          <p class="label" style="margin-bottom:10px">Photos</p>
+          <p class="note" style="max-width:640px">Press-ready photography. Free to use for editorial and press purposes with credit to Gavin Forster Photography &middot; high-resolution downloads below each image.</p>
+        </div>
+        <button class="carousel-toggle" id="photoCarouselToggle" aria-pressed="false">Pause motion</button>
+      </div>
+      <div class="carousel-viewport" id="photoCarouselViewport" tabindex="0" aria-label="Scrollable photos of Sebastian Moore">
+        <div class="carousel" id="photoCarousel" role="region" aria-label="Photos of Sebastian Moore">
+          <figure class="carousel-item">
+            <img src="assets/press/sebastian-moore-newcastle-quayside-suit-tyne-bridge.jpg" width="1800" height="1200" decoding="async" alt="Sebastian Moore standing on Newcastle Quayside with the Tyne Bridge in the background">
+            <figcaption class="cap">Newcastle Quayside, with the Tyne Bridge behind.</figcaption>
+            <a class="dl-btn" href="assets/press/sebastian-moore-newcastle-quayside-suit-tyne-bridge-hd.jpg" download>Download HD</a>
+          </figure>
+          <figure class="carousel-item">
+            <img src="assets/press/sebastian-moore-millennium-bridge-newcastle-gateshead.jpg" width="1800" height="1200" decoding="async" alt="Sebastian Moore leaning on a railing beneath the Gateshead Millennium Bridge">
+            <figcaption class="cap">Beneath the Gateshead Millennium Bridge.</figcaption>
+            <a class="dl-btn" href="assets/press/sebastian-moore-millennium-bridge-newcastle-gateshead-hd.jpg" download>Download HD</a>
+          </figure>
+          <figure class="carousel-item">
+            <img src="assets/press/sebastian-moore-walking-newcastle-quayside.jpg" width="1200" height="1800" decoding="async" alt="Sebastian Moore walking along Newcastle Quayside towards the Tyne Bridge">
+            <figcaption class="cap">Walking Newcastle Quayside towards the Tyne Bridge.</figcaption>
+            <a class="dl-btn" href="assets/press/sebastian-moore-walking-newcastle-quayside-hd.jpg" download>Download HD</a>
+          </figure>
+          <figure class="carousel-item">
+            <img src="assets/press/sebastian-moore-sage-gateshead-millennium-bridge.jpg" width="1800" height="1200" decoding="async" alt="Sebastian Moore beside the River Tyne with the Sage Gateshead and Millennium Bridge behind him">
+            <figcaption class="cap">On the Tyne, with Sage Gateshead and the Millennium Bridge behind.</figcaption>
+            <a class="dl-btn" href="assets/press/sebastian-moore-sage-gateshead-millennium-bridge-hd.jpg" download>Download HD</a>
+          </figure>
+          <figure class="carousel-item">
+            <img src="assets/press/sebastian-moore-northumbria-university-lecture-theatre.jpg" width="1800" height="1200" decoding="async" alt="Sebastian Moore seated in a lecture theatre at Northumbria University">
+            <figcaption class="cap">Northumbria University, Newcastle.</figcaption>
+            <a class="dl-btn" href="assets/press/sebastian-moore-northumbria-university-lecture-theatre-hd.jpg" download>Download HD</a>
+          </figure>
+          <figure class="carousel-item">
+            <img src="assets/press/sebastian-moore-newcastle-quayside-suit-tyne-bridge.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Sebastian Moore standing on Newcastle Quayside with the Tyne Bridge in the background">
+            <figcaption class="cap">Newcastle Quayside, with the Tyne Bridge behind.</figcaption>
+            <a class="dl-btn" href="assets/press/sebastian-moore-newcastle-quayside-suit-tyne-bridge-hd.jpg" download>Download HD</a>
+          </figure>
+          <figure class="carousel-item">
+            <img src="assets/press/sebastian-moore-millennium-bridge-newcastle-gateshead.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Sebastian Moore leaning on a railing beneath the Gateshead Millennium Bridge">
+            <figcaption class="cap">Beneath the Gateshead Millennium Bridge.</figcaption>
+            <a class="dl-btn" href="assets/press/sebastian-moore-millennium-bridge-newcastle-gateshead-hd.jpg" download>Download HD</a>
+          </figure>
+          <figure class="carousel-item">
+            <img src="assets/press/sebastian-moore-walking-newcastle-quayside.jpg" width="1200" height="1800" loading="lazy" decoding="async" alt="Sebastian Moore walking along Newcastle Quayside towards the Tyne Bridge">
+            <figcaption class="cap">Walking Newcastle Quayside towards the Tyne Bridge.</figcaption>
+            <a class="dl-btn" href="assets/press/sebastian-moore-walking-newcastle-quayside-hd.jpg" download>Download HD</a>
+          </figure>
+          <figure class="carousel-item">
+            <img src="assets/press/sebastian-moore-sage-gateshead-millennium-bridge.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Sebastian Moore beside the River Tyne with the Sage Gateshead and Millennium Bridge behind him">
+            <figcaption class="cap">On the Tyne, with Sage Gateshead and the Millennium Bridge behind.</figcaption>
+            <a class="dl-btn" href="assets/press/sebastian-moore-sage-gateshead-millennium-bridge-hd.jpg" download>Download HD</a>
+          </figure>
+          <figure class="carousel-item">
+            <img src="assets/press/sebastian-moore-northumbria-university-lecture-theatre.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Sebastian Moore seated in a lecture theatre at Northumbria University">
+            <figcaption class="cap">Northumbria University, Newcastle.</figcaption>
+            <a class="dl-btn" href="assets/press/sebastian-moore-northumbria-university-lecture-theatre-hd.jpg" download>Download HD</a>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer>
@@ -491,6 +521,7 @@
       <a href="https://x.com/sebxmoore">X</a>
       <a href="https://www.instagram.com/sebxmoore/">Instagram</a>
       <a href="https://www.tiktok.com/@sebxmoore">TikTok</a>
+      <a href="https://www.youtube.com/@sebxmoore">YouTube</a>
       <a href="/">Home</a>
     </p>
     <p>&copy; 2026 Sebastian Moore. This is a personal website; all views are my own and do not represent any employer.</p>
@@ -507,6 +538,36 @@
   });
   document.querySelector('.skip-link').addEventListener('focus', function(){ this.style.left = '0'; });
   document.querySelector('.skip-link').addEventListener('blur', function(){ this.style.left = '-9999px'; });
+
+  // photo carousel: auto-drifts, speeds up on hover, scrolls manually
+  const pvp = document.getElementById('photoCarouselViewport');
+  const ptrack = document.getElementById('photoCarousel');
+  const pBtn = document.getElementById('photoCarouselToggle');
+  if (pvp && ptrack && pBtn) {
+    let paused = false, hover = false, suspendUntil = 0;
+    const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    pBtn.addEventListener('click', () => {
+      paused = !paused;
+      pBtn.setAttribute('aria-pressed', String(paused));
+      pBtn.textContent = paused ? 'Play motion' : 'Pause motion';
+    });
+    pvp.addEventListener('mouseenter', () => hover = true);
+    pvp.addEventListener('mouseleave', () => hover = false);
+    pvp.addEventListener('wheel', () => suspendUntil = performance.now() + 2000, { passive: true });
+    pvp.addEventListener('pointerdown', () => suspendUntil = performance.now() + 3000);
+    pvp.addEventListener('scroll', () => {
+      const half = ptrack.scrollWidth / 2;
+      if (pvp.scrollLeft >= half) pvp.scrollLeft -= half;
+    }, { passive: true });
+    if (!reduced) {
+      (function drift() {
+        if (!paused && performance.now() > suspendUntil && !document.hidden) {
+          pvp.scrollLeft += hover ? 3 : 0.7;
+        }
+        requestAnimationFrame(drift);
+      })();
+    }
+  }
 </script>
 
 </body>
