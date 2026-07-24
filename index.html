@@ -641,6 +641,7 @@
     .xp-logo img.l-dsit  { height: 66px; }
     .xp-logo img.l-dcms  { height: 66px; }
     .xp-logo img.l-desnz { height: 64px; }
+    .xp-logo img.l-pds   { height: 77px; }
     .xp-logo.stack { flex-direction: column; align-items: flex-start; gap: 14px; }
     .xp li:hover .xp-logo img, .xp li:focus-within .xp-logo img { transform: scale(1.16); }
     .logo-dark { display: none; }
@@ -672,6 +673,19 @@
     #experience .xp p { color: var(--on-dark-soft); }
     #experience .logo-light { display: none !important; }
     #experience .logo-dark { display: inline !important; }
+
+    /* coming-soon role: teaser entry with blurred, unannounced detail */
+    .xp li.soon .blur-text { filter: blur(6px); user-select: none; -webkit-user-select: none; }
+    .soon-badge {
+      display: inline-flex; align-items: center; gap: 6px; margin-top: 12px;
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: #2dd4bf; border: 1px solid rgba(45,212,191,0.4); padding: 5px 12px; border-radius: 999px;
+    }
+    .soon-badge::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%; background: #2dd4bf;
+      box-shadow: 0 0 8px #2dd4bf; animation: soonPulse 2s ease-in-out infinite;
+    }
+    @keyframes soonPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
 
     /* skills word cloud */
     .skills-band { background: var(--navy-deep); padding: 68px 0; }
@@ -1225,6 +1239,15 @@
     <div class="wrap-wide section-grid reveal">
       <p class="label">Experience</p>
       <ul class="xp">
+        <li class="soon">
+          <div class="xp-logo"><img class="logo-dark l-pds" src="/assets/logos/pds-white.png" alt="Police Digital Service logo"></div>
+          <div>
+          <p class="role blur-text">Role to be announced</p>
+          <p class="org-line">Police Digital Service &middot; From August 2026</p>
+          <p class="blur-text">Details to follow once the move is confirmed.</p>
+          <span class="soon-badge">Coming soon</span>
+          </div>
+        </li>
         <li>
           <div class="xp-logo"><img class="logo-light l-hmt" src="/assets/logos/hmt.png" alt="HM Treasury logo"><img class="logo-dark l-hmt" src="/assets/logos/hmt-white.png" alt="HM Treasury logo"></div>
           <div>

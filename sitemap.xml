@@ -6,6 +6,10 @@
     <lastmod>2026-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://sebastianmoore.co.uk/assets/sebastian-moore-hd.jpg</image:loc>
+      <image:caption>Sebastian Moore, AI governance and digital strategy specialist in the UK Civil Service</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://sebastianmoore.co.uk/publications.html</loc>
@@ -30,7 +34,7 @@
     </image:image>
     <image:image>
       <image:loc>https://sebastianmoore.co.uk/assets/press/sebastian-moore-northumbria-university-lecture-theatre-hd.jpg</image:loc>
-      <image:caption>Sebastian Moore seated in a lecture theatre at Northumbria University</image:caption>
+      <image:caption>Sebastian Moore seated in a lecture theatre</image:caption>
     </image:image>
   </url>
 </urlset>
