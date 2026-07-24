@@ -674,23 +674,21 @@
     #experience .logo-light { display: none !important; }
     #experience .logo-dark { display: inline !important; }
 
-    /* coming-soon role: fully obscured teaser entry, unannounced detail.
-       Blur alone still lets short, bold, high-contrast text read through -
-       a solid scrim underneath the label guarantees it's actually illegible. */
+    /* coming-soon role: same blur treatment as the coming-soon research card
+       (blur(5px) + 0.4 opacity), applied directly to the li's own two grid
+       children so the row keeps the normal xp-li dimensions - no extra
+       nested grid wrapper, which was blowing the row height out. */
     .xp li.soon { position: relative; overflow: hidden; }
-    .xp li.soon .soon-inner {
-      display: grid; grid-template-columns: 130px 1fr; gap: 24px; align-items: start;
-      filter: blur(16px); opacity: 0.35; user-select: none; -webkit-user-select: none; pointer-events: none;
+    .xp li.soon .soon-blur {
+      filter: blur(5px); opacity: 0.4; user-select: none; -webkit-user-select: none; pointer-events: none;
     }
     .xp li.soon .xp-soon-tag {
-      position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
-      text-align: center; padding: 0 20px; background: rgba(4,20,31,0.86);
+      position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; text-align: center;
     }
     .xp li.soon .xp-soon-tag .t {
       font-family: "Source Serif 4", Georgia, serif; font-size: 1.15rem; font-weight: 600;
       letter-spacing: 0.02em; color: var(--on-dark);
     }
-    @media (max-width: 560px) { .xp li.soon .soon-inner { grid-template-columns: 1fr; } }
 
     /* skills word cloud */
     .skills-band { background: var(--navy-deep); padding: 68px 0; }
@@ -1245,13 +1243,11 @@
       <p class="label">Experience</p>
       <ul class="xp">
         <li class="soon" role="img" aria-label="Next role, coming soon">
-          <div class="soon-inner" aria-hidden="true">
-            <div class="xp-logo"><img class="logo-dark l-pds" src="/assets/logos/pds-white.png" alt="Police Digital Service logo"></div>
-            <div>
-            <p class="role">Role to be announced</p>
-            <p class="org-line">Police Digital Service &middot; From August 2026</p>
-            <p>Details to follow once the move is confirmed.</p>
-            </div>
+          <div class="xp-logo soon-blur" aria-hidden="true"><img class="logo-dark l-pds" src="/assets/logos/pds-white.png" alt="Police Digital Service logo"></div>
+          <div class="soon-blur" aria-hidden="true">
+          <p class="role">Role to be announced</p>
+          <p class="org-line">Police Digital Service &middot; From August 2026</p>
+          <p>Details to follow once the move is confirmed.</p>
           </div>
           <div class="xp-soon-tag"><span class="t">Coming soon</span></div>
         </li>
