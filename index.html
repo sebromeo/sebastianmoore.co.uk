@@ -674,18 +674,21 @@
     #experience .logo-light { display: none !important; }
     #experience .logo-dark { display: inline !important; }
 
-    /* coming-soon role: teaser entry with blurred, unannounced detail */
-    .xp li.soon .blur-text { filter: blur(6px); user-select: none; -webkit-user-select: none; }
-    .soon-badge {
-      display: inline-flex; align-items: center; gap: 6px; margin-top: 12px;
-      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-      color: #2dd4bf; border: 1px solid rgba(45,212,191,0.4); padding: 5px 12px; border-radius: 999px;
+    /* coming-soon role: fully blurred teaser entry, unannounced detail */
+    .xp li.soon { position: relative; overflow: hidden; }
+    .xp li.soon .soon-inner {
+      display: grid; grid-template-columns: 130px 1fr; gap: 24px; align-items: start;
+      filter: blur(6px); opacity: 0.4; user-select: none; -webkit-user-select: none; pointer-events: none;
     }
-    .soon-badge::before {
-      content: ''; width: 6px; height: 6px; border-radius: 50%; background: #2dd4bf;
-      box-shadow: 0 0 8px #2dd4bf; animation: soonPulse 2s ease-in-out infinite;
+    .xp li.soon .xp-soon-tag {
+      position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 0 20px;
     }
-    @keyframes soonPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+    .xp li.soon .xp-soon-tag .t {
+      font-family: "Source Serif 4", Georgia, serif; font-size: 1.15rem; font-weight: 600;
+      letter-spacing: 0.02em; color: var(--on-dark);
+    }
+    @media (max-width: 560px) { .xp li.soon .soon-inner { grid-template-columns: 1fr; } }
 
     /* skills word cloud */
     .skills-band { background: var(--navy-deep); padding: 68px 0; }
@@ -1239,14 +1242,16 @@
     <div class="wrap-wide section-grid reveal">
       <p class="label">Experience</p>
       <ul class="xp">
-        <li class="soon">
-          <div class="xp-logo"><img class="logo-dark l-pds" src="/assets/logos/pds-white.png" alt="Police Digital Service logo"></div>
-          <div>
-          <p class="role blur-text">Role to be announced</p>
-          <p class="org-line">Police Digital Service &middot; From August 2026</p>
-          <p class="blur-text">Details to follow once the move is confirmed.</p>
-          <span class="soon-badge">Coming soon</span>
+        <li class="soon" role="img" aria-label="Next role, coming soon">
+          <div class="soon-inner" aria-hidden="true">
+            <div class="xp-logo"><img class="logo-dark l-pds" src="/assets/logos/pds-white.png" alt="Police Digital Service logo"></div>
+            <div>
+            <p class="role">Role to be announced</p>
+            <p class="org-line">Police Digital Service &middot; From August 2026</p>
+            <p>Details to follow once the move is confirmed.</p>
+            </div>
           </div>
+          <div class="xp-soon-tag"><span class="t">Coming soon</span></div>
         </li>
         <li>
           <div class="xp-logo"><img class="logo-light l-hmt" src="/assets/logos/hmt.png" alt="HM Treasury logo"><img class="logo-dark l-hmt" src="/assets/logos/hmt-white.png" alt="HM Treasury logo"></div>
