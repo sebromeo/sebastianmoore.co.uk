@@ -674,15 +674,17 @@
     #experience .logo-light { display: none !important; }
     #experience .logo-dark { display: inline !important; }
 
-    /* coming-soon role: fully blurred teaser entry, unannounced detail */
+    /* coming-soon role: fully obscured teaser entry, unannounced detail.
+       Blur alone still lets short, bold, high-contrast text read through -
+       a solid scrim underneath the label guarantees it's actually illegible. */
     .xp li.soon { position: relative; overflow: hidden; }
     .xp li.soon .soon-inner {
       display: grid; grid-template-columns: 130px 1fr; gap: 24px; align-items: start;
-      filter: blur(6px); opacity: 0.4; user-select: none; -webkit-user-select: none; pointer-events: none;
+      filter: blur(16px); opacity: 0.35; user-select: none; -webkit-user-select: none; pointer-events: none;
     }
     .xp li.soon .xp-soon-tag {
       position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
-      text-align: center; padding: 0 20px;
+      text-align: center; padding: 0 20px; background: rgba(4,20,31,0.86);
     }
     .xp li.soon .xp-soon-tag .t {
       font-family: "Source Serif 4", Georgia, serif; font-size: 1.15rem; font-weight: 600;
